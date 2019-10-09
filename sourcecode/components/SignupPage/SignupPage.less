@@ -1,0 +1,54 @@
+@import '../../styles/common';
+
+.base {
+    lost-utility: clearfix;
+    margin-top: 80px;
+    margin-bottom: 80px;
+}
+
+.header {
+    lost-column: 10/12;
+    lost-offset: -1/12;
+    .typography-mixin;
+    margin-bottom: 40px;
+}
+
+.main {
+    lost-column: 10/12;
+    lost-offset: -1/12;
+}
+
+.sub {
+    lost-column: 10/12;
+    lost-offset: -1/12;
+}
+
+@media @desktopAndDown {
+    .base {
+        padding: 0 10px;
+    }
+
+
+}
+
+@media @tabletAndDown {
+    .header,
+    .main,
+    .sub {
+        lost-column: 12/12;
+        lost-offset: 0/12;
+    }
+
+    .sub {
+        margin-bottom: 40px;
+    }
+}
+
+@media @mobile {
+    .header,
+    .main,
+    .sub {
+        lost-column: 12/12;
+        lost-offset: 0/12;
+    }
+}

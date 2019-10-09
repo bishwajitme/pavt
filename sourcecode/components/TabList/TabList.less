@@ -1,0 +1,43 @@
+@import '../../styles/common';
+
+.section {
+    box-sizing: border-box;
+    padding: 0 10px;
+    margin-bottom: 80px;
+}
+
+.titles {
+    lost-utility: clearfix;
+}
+
+.list {
+    lost-column: 8/12;
+    lost-offset: -2/12;
+    display: flex;
+
+
+    li {
+        flex-grow: 1;
+    }
+}
+
+.content {
+    background-color: @color-gray-bg;
+}
+
+@media @tabletAndDown {
+    .section {
+        padding: 0;
+    }
+
+    .list {
+        lost-column: 12/12;
+        lost-offset: 0/12;
+    }
+}
+
+@media @mobile {
+    .list {
+        flex-direction: column;
+    }
+}

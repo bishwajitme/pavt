@@ -1,0 +1,41 @@
+@import '../../styles/common';
+
+.item {
+    box-sizing: border-box;
+    padding: 5px 5px 5px 0px;
+    word-wrap: break-word;
+}
+
+.heading {
+    font: @font-text-bold;
+    font-size: 14px;
+    color: @color-primary;
+    display: block;
+    margin-bottom: 5px;
+
+
+    .P & {
+        color: @color-primary-ph;
+    }
+
+    .T & {
+        color: @color-primary-th;
+    }
+
+    .V & {
+        color: @color-primary-vh;
+    }
+
+    .A & {
+        color: @color-primary-ah;
+    }
+}
+
+.value {
+    font: @font-text;
+    font-size: 12px;
+    color: @color-text;
+    @media @mobile {
+      font-size: 12px;
+    }
+}

@@ -1,0 +1,119 @@
+@import '../../styles/common';
+
+.article {
+    height: 200px;
+    flex-grow: 1;
+    margin: 30px 30px 30px 0;
+    color: white;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-color: #fff;
+    width: 20%;
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+
+    @media @siteMenu {
+        width: 40%;
+        margin: 0;
+    }
+
+    @media @mobile {
+        width: 60%;
+    }
+}
+
+.link {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+
+    &:hover {
+        .wrap {
+            bottom: 0;
+        }
+    }
+}
+
+.wrap {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    bottom: -120px;
+    transition: bottom 0.2s;
+
+    &:after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        opacity: 0.8;
+        top: 0;
+        left: 0;
+    }
+
+    .site-1 &:after {
+        background: @color-primary-gradient-ph;
+    }
+
+    .site-2 &:after {
+        background: @color-primary-gradient-ah;
+    }
+
+    .site-3 &:after {
+        background: @color-primary-gradient-vh;
+    }
+
+    .site-4 &:after {
+        background: @color-primary-gradient-th;
+    }
+}
+
+.logo {
+    position: relative;
+    display: flex;
+    height: 80px;
+    z-index: 10;
+    box-sizing: border-box;
+    padding: 20px;
+    align-items: center;
+
+    img {
+        display: block;
+        height: 18px;
+        filter: url("data:image/svg+xml;utf8,&lt;svg xmlns=\'http://www.w3.org/2000/svg\'&gt;&lt;filter id=\'grayscale\'&gt;&lt;feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/&gt;&lt;/filter&gt;&lt;/svg&gt;#grayscale"); /* Firefox 10+, Firefox on Android */
+        filter: gray; /* IE6-9 */
+        -webkit-filter: grayscale(100%); /* Chrome 19+, Safari 6+, Safari 6+ iOS */
+    }
+
+}
+
+.description {
+    position: relative;
+    font: @font-text;
+    text-decoration: none;
+    font-size: 16px;
+    z-index: 10;
+    box-sizing: border-box;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+}
+
+
+@media @mobile {
+    .article {
+        height: 70px;
+    }
+
+    .description {
+        display: none;
+    }
+
+    .wrap {
+        bottom: 0;
+    }
+}

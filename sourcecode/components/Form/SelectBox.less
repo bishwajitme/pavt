@@ -1,0 +1,120 @@
+@import '../../styles/common';
+
+.wrap {
+    width: 100%;
+    max-width: 400px;
+    padding: 0 10px 10px 0;
+    box-sizing: border-box;
+}
+
+.select {
+    position: relative;
+    background-color: white;
+    color: @color-text;
+    outline: none;
+    box-sizing: border-box;
+    width: 100%;
+
+    .toggle {
+        position: relative;
+        display: flex;
+        cursor: pointer;
+        height: 60px;
+        box-sizing: border-box;
+        padding: 15px 20px;
+        justify-content: space-between;
+        align-items: center;
+
+        //.hasChange & {
+        //    border: 1px solid @color-secondary;
+        //}
+
+        svg {
+            fill: @color-text;
+            height: 6px;
+            width: 11px;
+        }
+    }
+
+    .options {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        z-index: 100;
+        min-width: 100%;
+        background-color: white;
+        display: none;
+
+        &.open {
+            display: block;
+            box-shadow: 0px 5px 10px fade(#000000, 10%);
+        }
+    }
+
+    .separator {
+        font: @font-text-bold;
+        font-size: 12px;
+        padding: 5px 10px;
+        color: @color-primary;
+        border-top: 1px solid @color-gray-bg;
+    }
+
+    .item {
+        padding: 10px 20px;
+        cursor: pointer;
+        border-top: 1px solid @color-gray-bg;
+
+        &:hover {
+            background-color: @color-gray-bg;
+        }
+
+        &.active {
+            color: @color-primary;
+            cursor: default;
+        }
+    }
+}
+
+.mobileSelectWrap {
+    position: relative;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+}
+
+.mobileCarret {
+    position: relative;
+    right: 20px;
+    svg {
+        fill: @color-text;
+        height: 6px;
+        width: 11px;
+    }
+}
+
+.mobileSelect {
+    padding: 15px 20px;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    border-radius: 0;
+    outline: none;
+    border-style: hidden;
+    text-align: center;
+    width: 100%;
+    appearance: none;
+    border: 0;
+    cursor: pointer;
+    background: transparent;
+
+    &::-ms-expand {
+        display: none;
+    }
+}
+
+@media @tabletAndDown {
+    .wrap {
+        max-width: 100%;
+    }
+}

@@ -1,0 +1,91 @@
+@import '../../styles/common';
+
+.base {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.wrap {
+    display: flex;
+    align-items: center;
+}
+
+.share {
+    height: 40px;
+    width: 40px;
+    margin: 5px 7px;
+    cursor: pointer;
+
+    &:first-child {
+        margin-left: 0;
+    }
+
+    &:last-child {
+        margin-right: 0;
+    }
+
+    .white & {
+         svg {
+             transition: fill 0.2s;
+             fill: white;
+         }
+
+         &:hover svg {
+             fill: @color-primary-light;
+         }
+     }
+
+    .primary & {
+        svg {
+            transition: fill 0.2s;
+            fill: @color-primary;
+        }
+
+        &:hover svg {
+            fill: @color-primary-light;
+        }
+    }
+}
+
+.icon {
+    display: block;
+}
+
+.facebook,
+.twitter,
+.linkedin,
+.mail {
+    svg {
+        height: 40px;
+        width: 40px;
+    }
+}
+
+//.facebook {
+//    svg {
+//        height: 25px;
+//        width: 12px;
+//    }
+//}
+//
+//.twitter {
+//    svg {
+//        height: 20px;
+//        width: 25px;
+//    }
+//}
+//
+//.linkedin {
+//    svg {
+//        height: 25px;
+//        width: 25px;
+//    }
+//}
+//
+//.mail {
+//    svg {
+//        height: 15px;
+//        width: 22px;
+//    }
+//}

@@ -1,0 +1,103 @@
+@import '../../styles/common';
+
+.link {
+    position: relative;
+    display: block;
+    font-size: 16px;
+    text-decoration: none;
+
+    &.current {
+        cursor: default;
+    }
+
+    &.level-1 {
+        font: @font-text;
+        color: @color-text;
+        font-size: 20px;
+        background-color: @color-gray-bg;
+        padding: 25px 20px 25px 40px;
+        margin-bottom: 2px;
+
+        &.current {
+            &:before {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 0;
+                height: 100%;
+                width: 20px;
+                background-color: @color-primary;
+            }
+        }
+
+        &.clickable:hover {
+            background-color: darken(@color-gray-bg, 4%);
+        }
+    }
+
+    &.level-2 {
+        font: @font-text;
+        color: @color-text;
+        background-color: @color-gray-bg;
+        padding: 20px 20px 20px 40px;
+
+        &.current {
+            &:before {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 0;
+                height: 100%;
+                width: 20px;
+                background-color: @color-primary;
+            }
+        }
+
+        &.clickable:hover {
+            background-color: darken(@color-gray-bg, 4%);
+        }
+    }
+
+    &.level-3 {
+        font: @font-text;
+        font-size: 16px;
+        color: @color-text;
+        background-color: @color-gray-bg;
+        padding: 20px 20px 20px 70px;
+
+        &.current {
+            font: @font-text;
+            &:before {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 0;
+                height: 100%;
+                width: 20px;
+                background-color: @color-primary;
+            }
+        }
+
+        &.clickable:hover {
+            background-color: darken(@color-gray-bg, 4%);
+        }
+    }
+}
+
+
+@media @mobile {
+    .link {
+        &.level-1 {
+            font-size: 18px;
+            padding: 18px 20px 18px 40px;
+        }
+        &.level-2 {
+            font-size: 16px;
+            padding: 14px 20px 14px 40px;
+        }
+        &.level-3 {
+            font-size: 16px;
+            padding: 14px 20px 14px 60px;
+        }
+    }
+}

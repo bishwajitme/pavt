@@ -1,0 +1,72 @@
+@import '../../styles/common';
+
+.base {
+    position: relative;
+    margin-bottom: 80px;
+}
+
+.section {
+    lost-utility: clearfix;
+}
+
+.background {
+    background: @color-primary-gradient;
+    padding: 60px 10px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
+
+.header {
+    lost-column: 6/12;
+    lost-offset: -3/12;
+}
+
+.title {
+    font: @font-heading;
+    font-size: 52px;
+    color: white;
+    margin-bottom: 35px;
+    text-align: center;
+}
+
+.text {
+    font-size: 16px;
+    line-height: 1.6em;
+    color: white;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.form {
+    lost-column: 8/12;
+    lost-offset: -2/12;
+}
+
+@media (max-width: 960px) {
+    .header,
+    .form {
+        lost-column: 10/12;
+        lost-offset: -1/12;
+    }
+}
+@media only screen and (max-width: 800px) {
+    .badge {
+        position: relative;
+        top: 0;
+        margin: 0 auto 60px;
+        right: auto;
+    }
+
+    .header,
+    .form {
+        lost-column: 12/12;
+        lost-offset: 0/12;
+    }
+}
+
+
+@media @mobile {
+    .title {
+        font-size: 32px;
+    }
+}

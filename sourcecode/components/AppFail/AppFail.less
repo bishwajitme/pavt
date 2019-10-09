@@ -1,0 +1,42 @@
+@import '../../styles/common';
+
+.section {
+    lost-column: 8/12;
+    lost-offset: -2/12;
+    background-color: @color-primary;
+    margin-top: 50px;
+    box-sizing: border-box;
+    padding: 50px;
+    text-align: center;
+    color: white;
+
+    h1 {
+        font: @font-heading;
+        font-size: 52px;
+        margin-bottom: 20px;
+    }
+
+    p {
+        font: @font-text;
+        font-size: 20px;
+    }
+}
+
+@media @tabletAndDown {
+    .section {
+        lost-column: 12/12;
+        lost-offset: 0/12;
+    }
+}
+
+@media @mobile {
+    .section {
+        padding: 50px 20px;
+        h1 {
+            font-size: 32px;
+        }
+        p {
+            font-size: 16px;
+        }
+    }
+}

@@ -1,0 +1,48 @@
+@import '../../styles/common';
+
+.link {
+    color: @color-nav-link;
+    font-size: 13px;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 0 15px;
+    height: 80px;
+    position: relative;
+
+    &:hover {
+        color: @color-primary-light;
+    }
+}
+
+.active {
+  &:after {
+    position: absolute;
+    content: '';
+    bottom: 16px;
+    left: 0;
+    height: 3px;
+    width: 100%;
+    background: @color-nav-link;
+  }
+  @media @burgerMenu {
+    display: none;
+  }
+}
+
+@media @burgerMenu {
+  .link {
+    height: 40px;
+    padding: 20px 0;
+    font-size: 20px;
+    color: #fff;
+  }
+}
+
+@media @mobileLandscape {
+  .link {
+    height: 10px;
+  }
+}

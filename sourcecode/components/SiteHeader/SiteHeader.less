@@ -1,0 +1,70 @@
+@import '../../styles/common';
+
+.wrap {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+    max-width: @desktop-max-width;
+    margin: 0 auto;
+}
+
+.main {
+    font: @font-text-bold;
+    background-color: @color-nav-bg;
+}
+
+.nav {
+    display: flex;
+}
+
+.id {
+    display: flex;
+}
+
+.pagesToggle {
+    display: none;
+}
+
+.search {
+    //display: none;
+}
+
+.pages {
+    display: flex;
+}
+
+.sitesToggle {
+    display: block;
+}
+
+@media @burgerMenu {
+    .wrap {
+        flex-wrap: wrap;
+    }
+
+    .nav {
+        flex-basis: 100%;
+        //flex-wrap: wrap;
+    }
+
+    .pagesToggle {
+        display: block;
+        z-index: 2000;
+    }
+
+    .search {
+        display: block;
+        flex-basis: 50%;
+        order: 5;
+    }
+
+    .pages {
+        display: block;
+    }
+
+    .sitesToggle {
+        flex-basis: 50%;
+    }
+}

@@ -1,0 +1,232 @@
+@import '../../styles/common';
+
+.article {
+    position: relative;
+    lost-column: 6/12 2;
+    background-size: cover;
+    background-position: center center;
+    box-sizing: border-box;
+    //padding: 30px;
+    //height: 200px;
+    margin-bottom: 30px;
+    overflow: hidden;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+
+    &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: @color-default-gradient;
+    }
+
+    &.primary {
+        &:after {
+            background: @color-primary;
+            transition: background-color, 0.2s;
+        }
+
+        &:hover:after {
+          background: darken(@color-primary, 5%);
+        }
+    }
+
+    &.secondary {
+        &:after {
+          background: @color-primary-light;
+          transition: background-color, 0.2s;
+        }
+
+        &:hover:after {
+          background: darken(@color-primary-light, 5%);
+        }
+
+    }
+}
+
+.content {
+    position: relative;
+    z-index: 10;
+}
+
+.link {
+    display: block;
+    position: relative;
+    font: @font-text;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 43px 35px;
+    //margin-bottom: 20px;
+    color: white;
+
+    &:hover {
+        &:after {
+            width: 100%;
+        }
+    }
+}
+
+.arrowLink {
+    position: absolute;
+    z-index: 100;
+    bottom: 20px;
+    right: 20px;
+    height: 26px;
+    width: 26px;
+    border-radius: 20px;
+    background-color: white;
+    transition: background-color 0.2s;
+
+    svg {
+        position: absolute;
+        top: 6px;
+        left: 6px;
+        fill: @color-primary;
+        height: 15px;
+        width: 15px;
+        transition: fill 0.2s;
+    }
+
+    .primary & {
+        svg {
+            fill: @color-primary;
+        }
+        &:hover {
+            background-color: @color-primary-light;
+            svg {
+                fill: white;
+            }
+        }
+    }
+
+    .secondary & {
+        svg {
+            fill: @color-secondary;
+        }
+        &:hover {
+            background-color: @color-secondary-light;
+            svg {
+                fill: white;
+            }
+        }
+    }
+
+    &.external {
+        svg {
+            left: 6px;
+        }
+    }
+
+    &.document {
+        svg {
+            left: 6px;
+        }
+    }
+}
+
+[class*='thirds-fullrow'] {
+    .article {
+        lost-column: 4/12 3;
+        flex-direction: column;
+    }
+
+    @media @tabletAndDown {
+        .article {
+            lost-column: 12/12;
+            flex-direction: row;
+        }
+        .image {
+            flex-basis: 66%;
+        }
+    }
+
+    @media @mobile {
+        .article {
+            lost-column: 12/12;
+            flex-direction: column;
+        }
+        .image {
+            flex-basis: initial;
+        }
+    }
+}
+
+.text {
+    padding: 0 35px 43px 35px;
+    color: white;
+    font-size: 16px;
+    line-height: 1.62;
+}
+
+[class*='halfs-fullrow'] {
+    .article {
+        lost-column: 12/12 2;
+    }
+
+    @media @tabletAndDown {
+        .article {
+            lost-column: 12/12;
+        }
+    }
+}
+
+[class*='single-aside'] {
+    height: auto;
+    .article {
+        lost-column: 12/12;
+    }
+
+    @media @tabletAndDown {
+        .article {
+            lost-column: 12/12;
+        }
+    }
+}
+
+@media @mobile {
+    .link {
+        font-size: 20px;
+    }
+    .text {
+        color: white;
+        font-size: 16px;
+    }
+}
+
+.bgImage {
+  height: 200px;
+
+  &:after {
+    opacity: 0.8;
+  }
+
+  &.primary {
+      &:after {
+          background: @color-primary-gradient;
+      }
+
+      &:hover:after {
+        background: @color-primary-gradient;
+      }
+  }
+
+  &.secondary {
+      &:after {
+        background: @color-secondary-gradient;
+      }
+
+      &:hover:after {
+        background: @color-secondary-gradient;
+      }
+
+  }
+
+  .link {
+    padding-bottom: 20px;
+  }
+}

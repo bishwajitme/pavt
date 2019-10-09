@@ -1,0 +1,51 @@
+@import '../../styles/common';
+
+.articleCards,
+.containerBoxRight {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+}
+
+.containerBoxRight {
+  min-width: 373px;
+  max-width: 373px;
+  margin-left: 30px;
+  @media @tabletAndDown {
+    min-width: 100%;
+    max-width: 100%;
+    margin-left: 0;
+  }
+}
+
+.heading {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: @color-text;
+}
+
+@media @desktopAndDown {
+    .articleCards,
+    .preamble,
+    .container,
+    .heading {
+        padding: 0 10px;
+    }
+}
+
+.container {
+    display: flex;
+    margin-bottom: 100px;
+    @media @tabletAndDown {
+      display: block;
+    }
+}
+
+.articleList {
+  max-width: 777px;
+  width: 100%;
+}
+
+.articleCards {
+  margin-bottom: 100px;
+}

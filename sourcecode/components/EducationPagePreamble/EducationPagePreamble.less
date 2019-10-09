@@ -1,0 +1,54 @@
+@import '../../styles/common';
+
+.section {
+    lost-utility: clearfix;
+    box-sizing: border-box;
+    padding: 0 10px;
+    margin-bottom: 50px;
+}
+
+.well {
+    lost-column: 8/12;
+    lost-offset: -2/12;
+    box-sizing: border-box;
+    padding: 50px;
+    text-align: center;
+    background-color: @color-gray-bg;
+
+    @media @tabletAndDown {
+        lost-column: 12/12;
+        lost-offset: 0;
+        padding: 50px 30px;
+    }
+}
+
+.heading {
+    position: relative;
+    font: @font-heading;
+    font-size: 32px;
+    color: @color-primary;
+    margin-bottom: 40px;
+}
+
+.text {
+    font-size: 16px;
+    line-height: 1.62;
+    color: @color-text;
+    margin-bottom: 40px;
+}
+
+@media @tabletAndDown {
+    .heading {
+        font-size: 32px;
+    }
+}
+
+@media @mobile {
+    .heading {
+        font-size: 24px;
+    }
+
+    .text {
+        font-size: 16px;
+    }
+}

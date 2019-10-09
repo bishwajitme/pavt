@@ -1,0 +1,48 @@
+//GLOBAL COLORS
+//Theme colors in colors.less
+
+@color-default-gradient: linear-gradient(to bottom,@color-black-light 0%,@color-black-dark 100%);
+
+@color-header-bg: @color-primary;
+@color-gray-bg: #f2f2f2;
+@color-black-light: #777777;
+@color-black-dark: #1f1f1f;
+@color-text: #6a6a6a;
+@color-link: @color-primary;
+@color-link-hover: @color-primary-light;
+@color-input-placeholder: @color-text;
+@color-error: #ff0000;
+@color-white: #fff;
+
+
+
+//FONTS
+
+@font-heading: 700 1em "Gotham SSm 7r", "Gotham SSm A", "Gotham SSm B", sans-serif;
+@font-button: 300 1em "Gotham SSm 3r", "Gotham SSm A", "Gotham SSm B", sans-serif;
+@font-text: 300 1em "Gotham SSm 3r", "Gotham SSm A", "Gotham SSm B", sans-serif;
+@font-text-bold: 700 1em "Gotham SSm 7r", "Gotham SSm A", "Gotham SSm B", sans-serif;
+
+
+
+//BREAKPOINTS
+
+@mobile-max-width: 480px;
+@tablet-max-width: 768px;
+@tablet-min-width: (@mobile-max-width + 1);
+@desktop-max-width: 1180px;
+@desktop-min-width: (@tablet-max-width + 1);
+@desktop-large-min-width: (@desktop-max-width + 1);
+
+@mobileLandscape: ~"only screen and (min-device-width : 375px) and (max-device-width : 667px) and (orientation : landscape)";
+@mobile: ~"only screen and (max-width: @{mobile-max-width})";
+@tabletAndDown: ~"only screen and (max-width: @{tablet-max-width})";
+@tablet: ~"only screen and (min-width: @{tablet-min-width}) and (max-width: @{tablet-max-width})";
+@tabletAndUp: ~"only screen and (min-width: @{tablet-min-width})";
+@desktopAndDown: ~"only screen and (max-width: @{desktop-max-width})";
+@desktop: ~"only screen and (min-width: @{desktop-min-width}) and (max-width: @{desktop-max-width})";
+@desktopAndUp: ~"only screen and (min-width: @{desktop-min-width})";
+@desktop-large: ~"only screen and (min-width: @{desktop-large-min-width})";
+
+@burgerMenu: ~"only screen and (max-width: 900px)";
+@siteMenu: ~"only screen and (max-width: 980px)";

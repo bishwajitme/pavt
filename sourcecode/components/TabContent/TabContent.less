@@ -1,0 +1,38 @@
+@import '../../styles/common';
+
+.article {
+    lost-utility: clearfix;
+    box-sizing: border-box;
+    padding: 60px 0;
+}
+
+.wrap {
+    lost-column: 6/12;
+    lost-offset: -3/12;
+}
+
+.active {
+    display: block;
+}
+
+.inactive {
+    display: none;
+
+}
+
+@media @tabletAndDown {
+    .wrap {
+        lost-column: 10/12;
+        lost-offset: -1/12;
+    }
+}
+
+@media @mobile {
+    .article {
+        padding: 40px 10px;
+    }
+    .wrap {
+        lost-column: 12/12;
+        lost-offset: 0/12;
+    }
+}

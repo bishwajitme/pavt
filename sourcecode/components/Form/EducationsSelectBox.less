@@ -1,0 +1,138 @@
+@import '../../styles/common';
+
+.base {
+    position: relative;
+}
+
+.select {
+    display: inline-block;
+    background-color: white;
+    color: @color-text;
+    outline: none;
+    width: 100%;
+    margin-top: 30px;
+
+    &:focus {
+        box-shadow: 0 0 0 2px @color-primary-dark;
+    }
+
+    .toggle {
+        position: relative;
+        display: flex;
+        cursor: pointer;
+        box-sizing: border-box;
+        padding: 15px;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 14px;
+
+        .cross,
+        .check {
+            position: absolute;
+            right: 10px;
+            bottom: 13px;
+            height: 20px;
+            width: 20px;
+        }
+
+        .cross svg {
+            fill: red;
+        }
+
+        .check svg {
+            fill: green;
+        }
+
+        .carret svg {
+            fill: @color-text;
+            height: 6px;
+            width: 11px;
+        }
+    }
+
+    .options {
+        position: relative;
+        top: 100%;
+        left: 0;
+        z-index: 100;
+        min-width: 100%;
+        background-color: white;
+        display: none;
+
+        &.open {
+            display: block;
+            box-shadow: 0px 5px 10px fade(#000000, 10%);
+        }
+    }
+
+    .item {
+        border-top: 1px solid @color-gray-bg;
+
+        &:hover {
+            background-color: @color-gray-bg;
+        }
+    }
+
+    .label {
+        position: relative;
+        display: block;
+        max-width: 100%;
+        padding: 15px 20px 15px 45px;
+        cursor: pointer;
+        font-size: 14px;
+
+        &:before {
+            content: '';
+            position: absolute;
+            top: 15px;
+            left: 14px;
+            height: 16px;
+            width: 16px;
+            background-color: white;
+            border-radius: 1px;
+            border: 1px solid #dadada;
+        }
+
+        &:after {
+            content: '';
+            position: absolute;
+            top: 17px;
+            left: 16px;
+            height: 14px;
+            width: 14px;
+            border-radius: 1px;
+            background-color: white;
+            transition: background-color 0.2s;
+        }
+    }
+
+    input:checked + label {
+        &:after {
+            background-color: @color-primary;
+        }
+    }
+
+    .input {
+        display: none;
+    }
+
+}
+
+.validationMessage {
+    position: absolute;
+    display: inline-block;
+    top: 5px;
+    left: 0;
+    font-size: 12px;
+    line-height: 15px;
+    background-color: @color-secondary;
+    color: white;
+    padding: 5px 10px;
+    z-index: 10;
+}
+
+@media @tabletAndDown {
+    .wrap {
+        max-width: 100%;
+    }
+}

@@ -1,0 +1,28 @@
+@import '../../styles/common';
+
+.item {
+    box-sizing: border-box;
+    padding: 20px;
+    text-align: center;
+    background-color: transparent;
+    transition: background-color 0.2s;
+    font: @font-heading;
+    font-size: 24px;
+    color: @color-primary;
+
+    @media @mobile {
+        font-size: 20px;
+    }
+}
+
+
+.active {
+    background-color: @color-gray-bg;
+}
+
+.inactive {
+    &:hover {
+        cursor: pointer;
+        color: @color-primary-light;
+    }
+}

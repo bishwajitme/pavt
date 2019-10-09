@@ -1,0 +1,90 @@
+@import '../../styles/common';
+
+.link {
+    color: white;
+    font-size: 13px;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+    cursor: pointer;
+    height: 100%;
+
+    position: relative;
+
+    &:hover {
+        //background-color: @color-primary-light;
+        span,
+        span:before,
+        span:after {
+
+        }
+    }
+
+    &:focus {
+        background-color: transparent;
+    }
+
+    span {
+        margin: 0 auto;
+        position: relative;
+        width: 26px;
+        height: 4px;
+        background-color: @color-nav-link;
+        border-radius: 1px;
+        display: block;
+
+        transition: all 0.2s ease-in;
+
+        &:before,
+        &:after {
+            width: 26px;
+            height: 4px;
+            background-color: @color-nav-link;
+            border-radius: 1px;
+            display: block;
+            position: absolute;
+            content: '';
+
+            transition: all 0.2s ease-in;
+        }
+
+        &:before {
+            margin-top: -8px;
+        }
+
+        &:after {
+            margin-top: 8px;
+        }
+    }
+    @media @burgerMenu {
+      height: 65px;
+    }
+}
+
+.active {
+    position: fixed;
+    top: 0;
+    right: 0;
+
+    span {
+        background-color: rgba(0,0,0,0);
+
+        &:before,
+        &:after {
+            background-color: #ffffff;
+        }
+
+        &:before {
+            margin-top: 0;
+            transform: rotate(45deg);
+        }
+
+        &:after {
+            margin-top: 0;
+            transform: rotate(-45deg);
+        }
+    }
+}

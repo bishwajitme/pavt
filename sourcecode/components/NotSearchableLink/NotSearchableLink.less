@@ -1,0 +1,64 @@
+@import '../../styles/common';
+
+
+.base {
+    lost-utility: clearfix;
+    margin-bottom: 80px;
+}
+
+.wrap {
+    lost-column: 8/12;
+    lost-offset: -2/12;
+    box-sizing: border-box;
+    padding: 50px;
+    text-align: center;
+    background-color: @color-gray-bg;
+}
+
+.heading {
+    font: @font-heading;
+    font-size: 24px;
+    color: @color-primary;
+    margin-bottom: 20px;
+}
+
+.text {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.link {
+    display: inline-block;
+    color: white;
+    background-color: @color-secondary;
+    padding: 20px;
+    margin: 5px;
+    font: @font-button;
+    font-size: 16px;
+    text-decoration: none;
+    transition: background-color, 0.2s;
+
+    &:hover {
+        background-color: @color-secondary-light;
+    }
+
+    svg {
+        fill: white;
+        height: 16px;
+        margin-left: 10px;
+    }
+}
+
+@media @tabletAndDown {
+    .wrap {
+        lost-column: 10/12;
+        lost-offset: -1/12;
+    }
+}
+
+@media @mobile {
+    .wrap {
+        lost-column: 12/12;
+        lost-offset: 0/12;
+    }
+}

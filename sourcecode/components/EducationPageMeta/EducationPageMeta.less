@@ -1,0 +1,46 @@
+@import '../../styles/common';
+
+.section {
+    lost-utility: clearfix;
+    box-sizing: border-box;
+    padding: 0 10px;
+    margin-bottom: 80px;
+}
+
+.wrap {
+    lost-column: 8/12;
+    lost-offset: -2/12;
+}
+
+.list {
+    border-top: 5px solid @color-primary;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px 0;
+
+    li {
+        width: 25%;
+    }
+}
+
+
+@media @tabletAndDown {
+    .wrap {
+        lost-column: 12/12;
+        lost-offset: 0;
+    }
+
+    .list {
+        li {
+            width: 33%;
+        }
+    }
+}
+
+@media @mobile {
+    .list {
+        li {
+            width: 50%;
+        }
+    }
+}

@@ -1,0 +1,44 @@
+@import '../../styles/common';
+
+.link {
+    color: @color-nav-link;
+    font-size: 13px;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 80px;
+    padding: 0 15px;
+
+    &:hover {
+        color: lighten(@color-primary, 10%);
+        svg {
+            fill: lighten(@color-primary, 10%);
+        }
+    }
+    @media @burgerMenu {
+      height: 65px;
+    }
+}
+
+.active {
+    //background-color: @color-primary-light;
+}
+
+.icon {
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+    margin-right: 5px;
+
+    svg {
+        fill: @color-nav-link;
+    }
+}
+
+@media @mobile {
+    .link {
+        padding: 0 10px;
+    }
+}

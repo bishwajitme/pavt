@@ -1,0 +1,57 @@
+@import '../../styles/common';
+
+.content {
+  lost-utility: clearfix;
+  box-sizing: border-box;
+  padding: 50px 0;
+}
+
+.header {
+  lost-column: 6/12;
+  lost-offset: -3/12;
+  .typography-mixin;
+  margin-bottom: 40px;
+}
+
+.wrap {
+  lost-column: 6/12;
+  lost-offset: -3/12;
+  text-align: center;
+}
+
+.pressFilter {
+  margin-bottom: 80px;
+}
+
+.pressList {
+  margin-bottom: 80px;
+}
+
+@media @tabletAndDown {
+  .header {
+    lost-column: 10/12;
+    lost-offset: -1/12;
+  }
+
+  .wrap {
+    lost-column: 10/12;
+    lost-offset: -1/12;
+  }
+}
+
+@media @mobile {
+  .content {
+    padding: 60px 10px;
+  }
+
+  .header {
+    // lost-column: 12/12;
+    // lost-offset: 0/12;
+    padding: 0 10px;
+  }
+
+  .wrap {
+    lost-column: 12/12;
+    lost-offset: 0/12;
+  }
+}

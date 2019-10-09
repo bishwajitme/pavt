@@ -1,0 +1,52 @@
+@import '../../styles/common';
+
+.section {
+    position: relative;
+    margin-bottom: 40px;
+}
+
+.image {
+    height: 400px;
+    background-size: cover;
+    background-position: center center;
+}
+
+.nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+.prev,
+.next {
+    position: relative;
+    width: 50px;
+    background-color: fade(@color-gray-bg, 50%);
+    cursor: pointer;
+    transition: background-color 0.2s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:hover {
+        background-color: fade(@color-gray-bg, 80%);
+    }
+
+    svg {
+        width: 80%;
+        fill: @color-text;
+    }
+}
+
+@media @mobile {
+    .image {
+        height: 200px;
+        background-size: cover;
+        background-position: center center;
+    }
+}

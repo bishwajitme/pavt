@@ -1,0 +1,112 @@
+@import '../../styles/common';
+
+.base {
+  position: relative;
+}
+
+.input {
+  display: none;
+
+  & + label {
+    position: relative;
+    display: block;
+    font: @font-text;
+    font-size: 14px;
+    margin-top: 30px;
+    color: white;
+    box-sizing: border-box;
+    padding: 5px 40px 0 30px;
+    cursor: pointer;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 5px;
+      left: 0;
+      height: 16px;
+      width: 16px;
+      background-color: white;
+      border-radius: 1px;
+      border: 1px solid #dadada;
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: 7px;
+      left: 2px;
+      height: 14px;
+      width: 14px;
+      border-radius: 1px;
+      background-color: white;
+      transition: background-color 0.2s;
+    }
+  }
+
+  &:checked + label {
+    &:after {
+      background-color: @color-primary;
+    }
+  }
+}
+
+.cross,
+.check {
+  position: absolute;
+  top: 0px;
+  right: 5px;
+  bottom: 13px;
+  height: 20px;
+  width: 20px;
+  background-color: white;
+  padding: 5px;
+  border-radius: 100px;
+}
+
+.cross {
+  svg {
+    fill: red;
+  }
+}
+
+.check {
+  svg {
+    fill: green;
+  }
+}
+
+.placeholder {
+  display: none;
+}
+
+::-webkit-input-placeholder {
+  color: @color-input-placeholder;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+  color: @color-input-placeholder;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+  color: @color-input-placeholder;
+}
+
+::-ms-clear {  display: none; width : 0; height: 0; }
+::-ms-reveal {  display: none; width : 0; height: 0; }
+
+:-ms-input-placeholder {
+  color: @color-input-placeholder;
+}
+
+.validationMessage {
+  position: absolute;
+  display: inline-block;
+  top: -25px;
+  left: 0;
+  font-size: 12px;
+  line-height: 15px;
+  background-color: @color-secondary;
+  color: white;
+  padding: 5px 10px;
+  z-index: 10;
+}

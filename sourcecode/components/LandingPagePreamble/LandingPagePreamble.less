@@ -1,0 +1,59 @@
+@import '../../styles/common';
+
+.section {
+    padding: 100px 0;
+    lost-utility: clearfix;
+}
+
+.well {
+    box-sizing: border-box;
+    padding: 50px;
+    background-color: @color-gray-bg;
+    text-align: center;
+}
+
+.wellBox {
+  max-width: 777px;
+  margin: 0 auto;
+}
+
+.heading {
+    position: relative;
+    font: @font-heading;
+    font-size: 32px;
+    color: @color-primary;
+    margin-bottom: 30px;
+}
+
+.text {
+    font-size: 16px;
+    line-height: 1.62;
+    color: @color-text;
+    margin-bottom: 40px;
+
+    strong{
+      font-weight: bold;
+    }
+}
+
+
+@media @tabletAndDown {
+    .well {
+        lost-column: 12/12;
+        lost-offset: 0;
+        padding: 50px 30px;
+    }
+}
+
+@media @mobile {
+    .section {
+        padding: 50px 10px;
+    }
+    .heading {
+        font-size: 32px;
+    }
+    .text {
+        font-size: 16px;
+        margin-bottom: 40px;
+    }
+}

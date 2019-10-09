@@ -1,0 +1,31 @@
+@import '../../styles/common';
+
+.link {
+    display: inline-block;
+    color: white;
+    background-color: @color-secondary;
+    padding: 20px;
+    margin: 5px;
+    font: @font-button;
+    font-size: 16px;
+    text-decoration: none;
+    transition: background-color, 0.2s;
+    min-width: 170px;
+
+    &:hover {
+        background-color: darken(@color-secondary, 5%);
+    }
+
+    svg {
+        fill: white;
+        height: 16px;
+        width: 16px;
+        margin-left: 10px;
+    }
+
+    @media @burgerMenu {
+      width: 100%;
+      min-width: auto;
+      padding: 20px 0;
+    }
+}

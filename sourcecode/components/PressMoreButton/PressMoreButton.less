@@ -1,0 +1,42 @@
+@import '../../styles/common';
+
+.base {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.wrap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 30px;
+    box-sizing: border-box;
+}
+
+.item {
+    position: relative;
+    font: @font-heading;
+    font-size: 24px;
+    color: @color-primary;
+    background-color: @color-gray-bg;
+    padding: 20px 60px;
+    cursor: pointer;
+    text-align: center;
+    margin: 5px;
+    border-radius: 0 0 50px 50px;
+
+    &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -50%;
+        width: 200%;
+        height: 1px;
+        background-color: darken(@color-gray-bg, 10%);
+
+    }
+}
+
+.active {
+    background-color: white;
+}

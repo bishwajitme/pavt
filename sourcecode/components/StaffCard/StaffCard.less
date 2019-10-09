@@ -1,0 +1,70 @@
+@import '../../styles/common';
+
+.article {
+    lost-column: 4/12 3;
+    display: flex;
+    flex-direction: column;
+    background-color: @color-gray-bg;
+    margin-bottom: 20px;
+}
+
+.image {
+    width: 100%;
+    flex-basis: initial;
+    background-size: cover;
+    background-position: center center;
+    height: 250px;
+}
+
+.heading {
+    display: block;
+    position: relative;
+    font: @font-heading;
+    text-decoration: none;
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: @color-text;
+}
+
+.content {
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 30px;
+    height: 250px;
+}
+
+.info {
+    font-size: 14px;
+    line-height: 1.6em;
+    color: @color-text;
+    margin-bottom: 20px;
+
+    p {
+        margin-bottom: 5px;
+    }
+}
+
+
+@media @tabletAndDown {
+    .article {
+        lost-column: 12/12;
+        flex-direction: row;
+    }
+    .image {
+        flex-basis: 66%;
+    }
+}
+
+@media @mobile {
+    .article {
+        lost-column: 12/12;
+        flex-direction: column;
+    }
+    .heading {
+        font-size: 30px;
+    }
+    .image {
+        flex-basis: initial;
+    }
+}

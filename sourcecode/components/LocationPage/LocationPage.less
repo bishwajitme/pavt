@@ -1,0 +1,74 @@
+@import '../../styles/common';
+
+.content {
+    lost-utility: clearfix;
+    margin-bottom: 40px;
+
+    .wrap {
+        lost-column: 6/12;
+        lost-offset: -3/12;
+    }
+}
+
+.educationList {
+    margin-bottom: 80px;
+}
+
+.linkToAll {
+    padding: 50px 0px 80px;
+    box-sizing: border-box;
+    text-align: center;
+
+    a {
+        display: inline-block;
+        color: white;
+        background-color: @color-secondary;
+        padding: 20px;
+        font: @font-button;
+        font-size: 16px;
+        text-decoration: none;
+        transition: background-color, 0.2s;
+
+        &:hover {
+            background-color: darken(@color-secondary, 5%);
+        }
+
+        svg {
+            fill: white;
+            height: 16px;
+            width: 16px;
+            margin-left: 10px;
+        }
+    }
+}
+
+.blockList {
+    margin-bottom: 80px;
+}
+
+@media @desktopAndDown {
+    .blockList,
+    .educationList {
+        box-sizing: border-box;
+        padding: 0 10px;
+    }
+}
+
+@media @tabletAndDown {
+    .content {
+        .wrap {
+            lost-column: 10/12;
+            lost-offset: -1/12;
+        }
+    }
+}
+
+@media @mobile {
+    .content {
+        padding: 0 10px;
+        .wrap {
+            lost-column: 12/12;
+            lost-offset: 0/12;
+        }
+    }
+}

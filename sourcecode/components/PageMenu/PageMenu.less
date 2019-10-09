@@ -1,0 +1,35 @@
+@import '../../styles/common';
+
+.base {
+    display: flex;
+}
+
+.wrap {
+    display: flex;
+}
+
+@media @burgerMenu {
+    .base {
+        z-index: 1000;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        transition: top 0.4s;
+        background-color: @color-primary;
+        align-items: center;
+
+        &.visible {
+            top: 0;
+        }
+
+        &.hidden {
+            top: -100%;
+        }
+    }
+
+    .wrap {
+        width: 100%;
+        flex-direction: column;
+    }
+}

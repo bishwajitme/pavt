@@ -1,0 +1,55 @@
+@import '../../styles/common';
+
+.link {
+    color: @color-nav-link;
+    font-size: 13px;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+    height: 80px;
+    margin-left: 10px;
+
+    &:hover {
+        color: lighten(@color-primary, 10%);
+    }
+
+    svg {
+        display: inline-block;
+        fill: @color-primary-dark;
+        height: 6px;
+        width: 11px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    @media @burgerMenu {
+      height: 65px;
+      margin-left: 0;
+      svg {
+        margin-right: 0px;
+      }
+    }
+
+    @media @desktop-large {
+      margin-left: 10px;
+      svg {
+        margin-right: 0px;
+      }
+    }
+
+}
+
+.active {
+  svg {
+    transform: rotate(0.5turn);
+  }
+}
+
+@media @mobile {
+    .link {
+        padding: 0 10px;
+    }
+}

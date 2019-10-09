@@ -1,0 +1,31 @@
+@import '../../styles/common';
+
+.input {
+  font: @font-text;
+  text-align: center;
+  display: inline-block;
+  padding: 20px 30px;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-size: 16px;
+  line-height: 1em;
+  white-space: nowrap;
+  color: white;
+  background-color: @color-secondary;
+  transition: background-color 0.4s, color 0.4s;
+  border: none;
+  box-shadow: none;
+  -webkit-appearance: none;
+  outline: none;
+  margin-top: 30px;
+
+
+  &:focus {
+    box-shadow: 0 0 0 2px @color-secondary;
+    background-color: darken(@color-secondary, 5%);
+  }
+  &:hover {
+    color: white;
+    background-color: darken(@color-secondary, 5%);
+  }
+}
