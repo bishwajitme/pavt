@@ -2,7 +2,7 @@ import dataLayer from 'utils/dataLayer';
 import React, { Component, PropTypes } from 'react';
 import ImmutablePropTypes from 'react-immutable-proptypes';
 import Immutable from 'immutable';
-import SelectBox from 'components/Form/SelectBox';
+import SelectBox from 'components/Form/CheckBoxes';
 import { Link } from 'react-router';
 import styles from './EducationFilter.less';
 
@@ -83,17 +83,18 @@ class EducationFilter extends Component {
                 label: 'studieorter',
               }}
               ui={ui}/>
-            <SelectBox
-              actions={actions}
-              filter={filter}
-              onSelect={handlers.setFilter}
-              search={search}
-              type={{
-                singular: 'subject',
-                plural: 'subjects',
-                label: 'ämnen',
-              }}
-              ui={ui}/>
+              <SelectBox
+                actions={actions}
+                filter={filter}
+                onSelect={handlers.setFilter}
+                search={search}
+                type={{
+                  singular: 'studietakt',
+                  plural: 'studietakts',
+                  label: 'Studietakt',
+                }}
+                ui={ui}/>
+
             <div className={`${styles.apply} ${styles[changeStyle]}`}>
               {(window.location.pathname === '/utbildningar')
                 ? (<span className={styles.link}

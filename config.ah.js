@@ -13,7 +13,7 @@ module.exports = {
   // Variables to use in app
   dev: {
     sitename: 'Affärshögskolan',
-    hostname: 'https://affarshogskolan.se',
+    hostname: 'http://ah.demositestore.com',
     apiEndpoint: '/wp-json/ph',
     assetsPath: '/wp-content/themes/plushogskolan-web/assets/',
     cacheTime: 0,
@@ -28,7 +28,7 @@ module.exports = {
   },
   prod: {
     sitename: 'Affärshögskolan',
-    hostname: 'https://affarshogskolan.se',
+    hostname: 'http://ah.demositestore.com',
     apiEndpoint: '/wp-json/ph',
     assetsPath: '/wp-content/themes/plushogskolan-web/assets/',
     cacheTime: 0,

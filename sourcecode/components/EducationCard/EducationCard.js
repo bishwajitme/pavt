@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import ImmutablePropTypes from 'react-immutable-proptypes';
 import { Link } from 'react-router';
 import isLinkToCurrentSite from 'utils/isLinkToCurrentSite';
-import MetaItem from 'components/MetaItem/MetaItem';
+import MetaIconItem from 'components/MetaIconItem/MetaIconItem';
 import HTMLContent from 'components/HTMLContent/HTMLContent';
 import * as Icons from 'utils/svgIcons';
 import getPathFromFullUrl from 'utils/getPathFromFullUrl';
@@ -24,13 +24,24 @@ class EducationCard extends Component {
     const school = content.get('school').charAt(0);
     const location = content.get('location');
     let locations = content.get('locationText');
-    
+    let establishment = content.get('establishment').get('name');
+
+
+
     if (!locations) {
       locations = location.reduce((memo, locationItem) => {
         const separator = (memo.length) ? ', ' : '';
         return `${memo}${separator}${locationItem.get('name')}`;
       }, '');
     }
+
+    let extabClassName = 'kurs';
+   if(establishment === 'Yrkeshögskoleutbildning'){
+     establishment = 'Yh';
+    extabClassName = 'yh'
+    }
+
+
 
     const link = (isLinkToCurrentSite(linkUrl))
       ? <Link to={getPathFromFullUrl(linkUrl)}>{title}</Link>
@@ -39,16 +50,17 @@ class EducationCard extends Component {
     const arrowLink = (isLinkToCurrentSite(linkUrl))
       ? (
       <Link to={getPathFromFullUrl(linkUrl)}
-            className={styles.arrow}
+            className={styles.arrowLink}
             title={title}>
-        {Icons.linkArrowRight}
+        {Icons.carretRight}
       </Link>
     )
       : <a href={linkUrl}
-           className={styles.arrow}
-           title={title}>
-      {Icons.linkArrowRight}
-    </a>;
+             className={styles.arrowLink}
+             title={title}>
+         Läs mer {Icons.carretRight}
+      </a>;
+
 
 
     let statusText = '';
@@ -67,39 +79,39 @@ class EducationCard extends Component {
     return (
       <article
         className={`${styles.article} ${styles[school]} ${styles[status]}`}>
+        <div className={`${styles[extabClassName]}`}>{establishment}</div>
         <div className={styles.content}>
           <h1 className={styles.heading}>
             {link}
           </h1>
-          {excerpt ? <HTMLContent className={styles.text}
-                                  content={excerpt}/> : null}
         </div>
         <div className={styles.meta}>
           <ul className={styles.list}>
-            <MetaItem heading='Studieorter'
+            <MetaIconItem icon='map-marker-alt'
                       value={locations}
                       school={school}/>
-            <MetaItem heading='Sista ansökningsdag'
+
+            <MetaIconItem icon='clock'
                       value={deadline}
                       school={school}/>
-            <MetaItem heading='Utbildningsstart'
+            <MetaIconItem icon='clock'
                       value={startDate}
                       school={school}/>
-            <MetaItem heading='Omfattning'
+            <MetaIconItem icon='lightbulb'
                       value={scope}
                       school={school}/>
-            <MetaItem heading='Poäng'
-                      value={points}
-                      school={school}/>
-            <MetaItem heading='Antal platser'
-                      value={vacancies}
+            <MetaIconItem icon='laptop'
+                      value={statusText}
                       school={school}/>
           </ul>
         </div>
         <div className={styles.info}>
-          {arrowLink}
-          <p className={styles.status}>{statusText}</p>
+        {arrowLink}
+
         </div>
+
+
+
       </article>
     );
 

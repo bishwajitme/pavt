@@ -3,6 +3,7 @@ import getSlugFromPathname from 'utils/getSlugFromPathname';
 import React, { Component, PropTypes } from 'react';
 import ImmutablePropTypes from 'react-immutable-proptypes';
 import EducationFilter from 'components/EducationFilter/EducationFilter';
+import EducationFilterTop from 'components/EducationFilterTop/EducationFilterTop';
 import SearchPageEducationList
   from 'components/SearchPageEducationList/SearchPageEducationList';
 import NotSearchableLink from 'components/NotSearchableLink/NotSearchableLink';
@@ -32,6 +33,13 @@ class SearchPage extends Component {
 
     return (
       <div>
+        <div className={styles.top_fliter}>
+          <EducationFilterTop actions={this.props.actions}
+                                 ctaTitle='Filtrera'
+                                 filter={this.props.filter}
+                                 search={this.props.search}
+                                 ui={this.props.ui}/>
+        </div>
         <div className={styles.filter}>
           <EducationFilter actions={this.props.actions}
                            ctaTitle='Filtrera'

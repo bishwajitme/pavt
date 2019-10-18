@@ -20,10 +20,6 @@ class EducationListSubjectGroup extends Component {
 
     return (
       <section className={styles.section}>
-        <h1 className={styles.heading}>
-          <span className={styles.name}>{heading.get('name')}</span>
-          <span className={styles.size}>{size} {unit}</span>
-        </h1>
 
         {educations}
       </section>

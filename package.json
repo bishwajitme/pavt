@@ -9,7 +9,7 @@
     "prod-th": "theme=th webpack --config production.js --progress --colors -p",
     "prod-vh": "theme=vh webpack --config production.js --progress --colors -p",
     "prod-ah": "theme=ah webpack --config production.js --progress --colors -p",
-    "dev": "theme=th node development.js",
+    "dev": "theme=ah node development.js",
     "test": "eslint sourcecode",
     "clean": "rm -rf node_modules && npm install"
   },
@@ -48,12 +48,17 @@
     "xhr-promise": "^2.0.0"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.25",
+    "@fortawesome/free-solid-svg-icons": "^5.11.2",
+    "@fortawesome/react-fontawesome": "^0.1.5",
     "autoprefixer": "^6.3.3",
     "compression-webpack-plugin": "^0.3.0",
     "google-maps": "^3.2.1",
     "history": "1.13.1",
+    "i": "^0.3.6",
     "immutable": "^3.7.6",
     "moment": "^2.20.1",
+    "npm": "^6.12.0",
     "react": "^0.14.3",
     "react-dom": "^0.14.3",
     "react-immutable-proptypes": "^1.5.1",

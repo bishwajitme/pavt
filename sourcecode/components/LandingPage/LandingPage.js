@@ -5,7 +5,7 @@ import ImmutablePropTypes from 'react-immutable-proptypes';
 import Immutable from 'immutable';
 import getSlugFromPathname from 'utils/getSlugFromPathname';
 import LandingPageHero from 'components/LandingPageHero/LandingPageHero';
-import EducationFilter from 'components/EducationFilter/EducationFilter';
+import EducationFilter from 'components/EducationFilterHome/EducationFilterHome';
 import LandingPagePreamble from
   'components/LandingPagePreamble/LandingPagePreamble';
 import InfoBlockList from 'components/InfoBlockList/InfoBlockList';

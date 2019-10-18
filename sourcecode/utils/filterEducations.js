@@ -65,6 +65,13 @@ export const filterEducationsThroughQuery = (query, educations) => {
             === slugFromVal)
               ? willPassFilter : false;
             break;
+          case 'studietakt':
+              //Om det är establishment, kolla om typens slug
+              // matchar filtrets value...
+              willPassFilter = (education.getIn([key, 'slug'])
+              === slugFromVal)
+                ? willPassFilter : false;
+              break;
           default:
             break;
         }

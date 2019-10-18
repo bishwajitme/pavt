@@ -4,6 +4,8 @@ import EducationListSubjectGroup
   from 'components/EducationListSubjectGroup/EducationListSubjectGroup';
 import isLinkToCurrentSite from 'utils/isLinkToCurrentSite';
 import styles from './EducationListSchoolGroup.less';
+import EducationCard from 'components/EducationCard/EducationCard';
+
 
 class EducationListSchoolGroup extends Component {
 
@@ -12,6 +14,13 @@ class EducationListSchoolGroup extends Component {
 
     const groupedBySubject = group
       .groupBy(education => education.get('subject'));
+
+    const educations = group.map(education => {
+      const key = education.get('slug');
+      return (
+        <EducationCard key={key} content={education}/>
+      )
+    }).toArray();
 
     const groupedComponents = groupedBySubject.map((group, name) => {
       return (<EducationListSubjectGroup key={name.get('slug')}
@@ -49,7 +58,7 @@ class EducationListSchoolGroup extends Component {
     return (
       <section className={styles.section}>
         {link}
-        {groupedComponents}
+          {educations}
       </section>
     );
 

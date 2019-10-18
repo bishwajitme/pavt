@@ -16,6 +16,10 @@ const initialState = Immutable.fromJS({
         slug: '',
         title: 'Välj ämne',
       },
+      studietakt: {
+        slug: '',
+        title: 'Välj Studietakt',
+      },
     },
     active: {
       establishment: {
@@ -29,6 +33,10 @@ const initialState = Immutable.fromJS({
       subject: {
         slug: '',
         title: 'Välj ämne',
+      },
+      studietakt: {
+        slug: '',
+        title: 'Välj Studietakt',
       },
     },
   },

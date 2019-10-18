@@ -1,15 +1,44 @@
 @import '../../styles/common';
 
 .article {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    align-items: center;
+    display: block;
     background-color: @color-gray-bg;
     margin-bottom: 20px;
     min-height: 200px;
     padding: 15px;
-}
+    width: 32%;
+    margin-right: 1%;
+    overflow: hidden;
+    float: left;
+    box-sizing: border-box;
+    min-height:420px;
+    position: relative;
+    transition: background-color 0.2s;
+    &:hover {
+        background-color: @color-primary-light;
+
+    }
+    .yh{
+      position: absolute;
+        top: 0;
+        right: 10px;
+        padding: 10px;
+        text-align: center;
+        font-weight: bold;
+        background: yellow;
+    }
+    .kurs{
+      position: absolute;
+        top: 0;
+        right: 10px;
+        padding: 10px;
+        text-align: center;
+        font-weight: bold;
+        background: @color-primary;
+        color: #fff;
+    }
+  }
+
 
 //.notSearchable {
 //    opacity: 0.4;
@@ -19,16 +48,19 @@
 //    }
 //}
 
-.content,
+
 .meta,
 .info {
     box-sizing: border-box;
     padding: 15px;
-    width: 0;
+    width: 100%;
 }
 
 .content {
-    flex-grow: 2;
+  box-sizing: border-box;
+  padding: 28px 15px 0px;
+  width: 100%;
+  flex-grow: 2;
 }
 
 .meta {
@@ -36,11 +68,9 @@
 }
 
 .info {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+
+    display: block;
+
 }
 
 .status {
@@ -60,9 +90,10 @@
     font-size: 24px;
     margin-bottom: 10px;
     color: @color-primary;
+    display: block;
 
     &:hover {
-        color: @color-primary-light;
+        color: @color-primary;
     }
 
     a {
@@ -81,16 +112,11 @@
     flex-wrap: wrap;
 
     li {
-        width: 50%;
+        width: 100%;
     }
 }
 
-.arrow {
-    svg {
-        width: 100px;
-        height: 100px;
-    }
-}
+
 
 .P{
     .heading {
@@ -99,11 +125,7 @@
             color: @color-primary-light-ph;
         }
     }
-    .arrow {
-        svg {
-            fill: @color-primary-ph;
-        }
-    }
+
 }
 
 .T{
@@ -111,11 +133,6 @@
         color: @color-primary-th;
         &:hover {
             color: @color-primary-light-th;
-        }
-    }
-    .arrow {
-        svg {
-            fill: @color-primary-th;
         }
     }
 }
@@ -127,11 +144,7 @@
             color: @color-primary-light-vh;
         }
     }
-    .arrow {
-        svg {
-            fill: @color-primary-vh;
-        }
-    }
+
 }
 
 .A{
@@ -141,13 +154,62 @@
             color: @color-primary-light-ah;
         }
     }
-    .arrow {
+
+}
+
+.arrowLink {
+    position: absolute;
+    z-index: 100;
+    bottom: 20px;
+    right: 20px;
+    height: 46px;
+    width: 146px;
+   line-height: 46px;
+   text-decoration: none;
+   color: @color-primary;
+
+
+
+    svg {
+        position: relative;
+        top: 13px;
+        left: 10px;
+        height: 22px;
+        width: 22px;
+        fill: @color-primary;
+        transition: fill 0.2s;
+       background-color: white;
+       padding: 10px;
+      border-radius: 22px;
+        transition: background-color 0.2s;
+    }
+
+    .P & {
+        svg {
+            fill: @color-primary-ph;
+        }
+    }
+
+    .T & {
+        svg {
+            fill: @color-primary-th;
+        }
+
+    }
+
+    .V & {
+        svg {
+            fill: @color-primary-vh;
+        }
+
+    }
+
+    .A & {
         svg {
             fill: @color-primary-ah;
         }
     }
 }
-
 @media @tabletAndDown {
     .content {
         flex-grow: 3;

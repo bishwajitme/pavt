@@ -20,6 +20,10 @@ const handlers = (comp) => {
           slug: '',
           title: 'Välj ämne',
         },
+        studietakt: {
+          slug: '',
+          title: 'Välj Studietakt',
+        },
       });
 
       const filter = cleanFilter.set(type, comp.props.query.get(type));
@@ -39,6 +43,10 @@ const handlers = (comp) => {
         subject: {
           slug: '',
           title: 'Välj ämne',
+        },
+        studietakt: {
+          slug: '',
+          title: 'Välj Studietakt',
         },
       });
 

@@ -18,6 +18,7 @@ const handlers = (comp) => {
       }));
 
       comp.props.actions.setEducationListTempFilter(filter);
+
     },
     onClick: (e) => {
       const oldFilter = comp.props.filter.getIn(['education', 'temp']);
@@ -31,6 +32,7 @@ const handlers = (comp) => {
     },
     toggleSelect: () => {
       comp.props.actions.toggleSelect(comp.props.type.singular);
+
     },
   }
 };
