@@ -61,6 +61,8 @@ class EducationFilter extends Component {
       return (
         <section className={styles.section}>
           <div className={styles.wrap}>
+          
+          <h4 className={styles.select_title}>Utbildningstyp</h4>
             <SelectBox
               actions={actions}
               filter={filter}
@@ -72,6 +74,7 @@ class EducationFilter extends Component {
                 label: 'utbildningstyper',
               }}
               ui={ui}/>
+              <h4 className={styles.select_title}>studieort</h4>
             <SelectBox
               actions={actions}
               filter={filter}
@@ -83,6 +86,7 @@ class EducationFilter extends Component {
                 label: 'studieorter',
               }}
               ui={ui}/>
+              <h4 className={styles.select_title}>Studietakt</h4>
               <SelectBox
                 actions={actions}
                 filter={filter}

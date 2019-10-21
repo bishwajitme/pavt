@@ -97,6 +97,7 @@ function educationListFetchFail (error) {
 
 function fetchEducationList (query) {
   const q = educationQueryObjectToQueryString(query);
+  
   return dispatch => {
     dispatch(educationListFetchRequest());
     return WP.get(`/education/find${q}`)

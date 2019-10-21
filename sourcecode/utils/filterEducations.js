@@ -33,6 +33,7 @@ export const filterOutNotSearchableEducations = (educations) => {
 
 export const filterEducationsThroughQuery = (query, educations) => {
   return educations.filter(education => {
+
     let willPassFilter = true;
     //För varje utbildning, loopa igenom query-parametrar
 
@@ -77,7 +78,7 @@ export const filterEducationsThroughQuery = (query, educations) => {
         }
       }
     });
-
+console.log('slugFromVal' + willPassFilter)
     //Returnera utbildningen om den matchar alla filter
     return willPassFilter;
   });
