@@ -81,9 +81,9 @@ class EducationCard extends Component {
         className={`${styles.article} ${styles[school]} ${styles[status]}`}>
         <div className={`${styles[extabClassName]}`}>{establishment}</div>
         <div className={styles.content}>
-          <h1 className={styles.heading}>
+          <h2 className={styles.heading}>
             {link}
-          </h1>
+          </h2>
         </div>
         <div className={styles.meta}>
           <ul className={styles.list}>

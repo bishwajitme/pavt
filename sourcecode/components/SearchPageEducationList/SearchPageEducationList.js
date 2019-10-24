@@ -24,12 +24,16 @@ class SearchPageEducationList extends Component {
     }
   }
 
+
+
   render () {
     const { educationList, filter, globals } = this.props;
     const status = educationList.get('status');
     const response = educationList.get('response');
     const query = filter.getIn(['education', 'active']);
-  console.log('query '+ query);
+
+
+
     if (status === 'done' && response.size) {
       const filteredNotSearchable = fE.filterOutNotSearchableEducations(
         response);
@@ -40,7 +44,7 @@ class SearchPageEducationList extends Component {
 
       const groupedBySchool = fE.groupEducationsBySchool(filtered);
 
-
+  
       const orderedBySchool = fE.orderEducationGroupsBySchool(groupedBySchool);
       const groupedComponents = orderedBySchool.map((group, name) => {
         const school = (orderedBySchool.size > 1)
@@ -61,7 +65,7 @@ class SearchPageEducationList extends Component {
         );
       } else {
         return (
-          <section>
+          <section className={styles.section}>
             <EducationListNoResult actions={this.props.actions}
                                    query={query}/>
           </section>

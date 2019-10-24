@@ -24,6 +24,10 @@ const handlers = (comp) => {
           slug: '',
           title: 'Välj Studietakt',
         },
+        utbildningsstart: {
+          slug: '',
+          title: 'Välj Utbildningsstart',
+        },
       });
 
       const filter = cleanFilter.set(type, comp.props.query.get(type));
@@ -47,6 +51,10 @@ const handlers = (comp) => {
         studietakt: {
           slug: '',
           title: 'Välj Studietakt',
+        },
+        utbildningsstart: {
+          slug: '',
+          title: 'Välj Utbildningsstart',
         },
       });
 

@@ -1,7 +1,78 @@
 @import '../../styles/common';
-
+.filter_banner{
+  background-color:@color-primary;
+  color: #fff;
+  padding: 50px 20px;
+  font: @font-heading;
+  font-size: 32px;
+  margin: 10px;
+}
 .filter {
     margin-bottom: 80px;
     width: 25%;
     float: left;
+
+    .link {
+        font: @font-button;
+        text-align: center;
+        display: inline-block;
+        width: 220px;
+        padding: 22px;
+        box-sizing: border-box;
+        text-decoration: none;
+        font-size: 16px;
+        font-weight: bold;
+        line-height: 1em;
+        white-space: nowrap;
+        color: white;
+        background-color: @color-secondary;
+        transition: background-color 0.4s, color 0.4s;
+        border: none;
+        box-shadow: none;
+        -webkit-appearance: none;
+        outline: none;
+        margin-bottom: 10px;
+        margin-right: 10px;
+
+        &:focus {
+            box-shadow: 0 0 0 2px @color-secondary;
+            background-color: darken(@color-secondary, 5%);
+        }
+        &:hover {
+            color: white;
+            background-color: darken(@color-secondary, 5%);
+        }
+      }
+
+      .sidecontent{
+        padding: 20px 40px 0 20px;
+
+        h3{
+          font-weight: bold;
+          margin-top: 20px;
+          margin-bottom: 5px;
+        }
+        p{
+          margin-bottom: 10px;
+        }
+        a{
+          text-decoration: none;
+        }
+        strong{
+          font-weight: bold;
+          color: @color-primary;
+
+        }
+      }
+}
+
+@media @tabletAndDown {
+.filter {
+  width: 100%
+}
+
+}
+
+@media @mobile {
+
 }

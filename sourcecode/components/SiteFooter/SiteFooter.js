@@ -73,7 +73,7 @@ class SiteFooter extends Component {
               <h1 className={styles.heading}>Kontakt</h1>
               <ul className={styles.list}>
                 <li>
-                  <a href={`tel:${phone}`}> {phone}</a>
+                  <a href={`tel:${phone}`}> {phone}</a>, se även lokala telefonnummer under fliken Här finns vi.
                 </li>
                 <li>
                   <a href={`mailto:${email}`}>{email}</a>

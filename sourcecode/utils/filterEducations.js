@@ -1,7 +1,7 @@
 import { fromJS } from 'immutable';
 
 export const groupEducationsBySchool = (educations) => {
-  return educations.sortBy(education => education.get('title'))
+return educations.sortBy(education => education.get('status') )
     .groupBy(education => education.get('school'));
 };
 
@@ -41,9 +41,19 @@ export const filterEducationsThroughQuery = (query, educations) => {
       //Om parametern inte har något värde läggs true till i arrayen
       const slugFromVal = val.get('slug');
 
+
+
       if (!!slugFromVal) {
         //annars kolla vilken nyckel parametern har
+
         switch (key) {
+          case 'utbildningsstart':
+              //Om det är establishment, kolla om typens slug
+              // matchar filtrets value...
+              willPassFilter = (education.getIn([key, 'slug'])
+              === slugFromVal)
+                ? willPassFilter : false;
+              break;
           case 'location':
             //Om det är location, försök hitta en ort med slug som
             // matchar filtrets value...
@@ -73,12 +83,12 @@ export const filterEducationsThroughQuery = (query, educations) => {
               === slugFromVal)
                 ? willPassFilter : false;
               break;
+
           default:
             break;
         }
       }
     });
-console.log('slugFromVal' + willPassFilter)
     //Returnera utbildningen om den matchar alla filter
     return willPassFilter;
   });

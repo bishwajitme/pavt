@@ -11,7 +11,7 @@
     overflow: hidden;
     float: left;
     box-sizing: border-box;
-    min-height:420px;
+    min-height:400px;
     position: relative;
     transition: background-color 0.2s;
     &:hover {
@@ -26,6 +26,7 @@
         text-align: center;
         font-weight: bold;
         background: yellow;
+
     }
     .kurs{
       position: absolute;
@@ -33,9 +34,10 @@
         right: 10px;
         padding: 10px;
         text-align: center;
-        font-weight: bold;
+        font-weight: 300;
         background: @color-primary;
         color: #fff;
+        font-size: 12px;
     }
   }
 
@@ -87,7 +89,7 @@
 
 .heading {
     font: @font-heading;
-    font-size: 24px;
+    font-size: 18px;
     margin-bottom: 10px;
     color: @color-primary;
     display: block;
@@ -160,10 +162,10 @@
 .arrowLink {
     position: absolute;
     z-index: 100;
-    bottom: 20px;
-    right: 20px;
+    bottom: 30px;
+    right: 10px;
     height: 46px;
-    width: 146px;
+    width: 130px;
    line-height: 46px;
    text-decoration: none;
    color: @color-primary;
@@ -211,16 +213,12 @@
     }
 }
 @media @tabletAndDown {
-    .content {
-        flex-grow: 3;
-    }
-
-    .meta {
-        display: none;
-    }
 
     .info {
         flex-grow: 1;
+    }
+    .article {
+      width: 49%;
     }
 }
 
@@ -229,6 +227,7 @@
         flex-direction: column;
         flex-wrap: wrap;
         min-height: 200px;
+          width: 100%;
     }
     .heading {
         font-size: 24px;

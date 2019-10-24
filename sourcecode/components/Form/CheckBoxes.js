@@ -26,6 +26,7 @@ const handlers = (comp) => {
         slug: e.target.dataset.value,
         title: e.target.dataset.title,
       }));
+      console.log('filter' + filter);
 
       comp.handlers.toggleSelect(comp.props.type.singular);
       comp.props.actions.setEducationListTempFilter(filter);
@@ -160,6 +161,7 @@ class CheckBoxes extends Component {
           locations: getDesktopOptions,
           subjects: getDesktopSubjectOptions,
           studietakts: getDesktopOptions,
+          utbildningsstarts: getDesktopOptions,
 
         },
         mobile: {
@@ -167,6 +169,7 @@ class CheckBoxes extends Component {
           locations: getMobileOptions,
           subjects: getMobileSubjectOptions,
           studietakts: getMobileOptions,
+          utbildningsstarts: getMobileOptions,
         },
       };
 

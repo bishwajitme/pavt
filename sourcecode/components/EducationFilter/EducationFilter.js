@@ -38,6 +38,8 @@ class EducationFilter extends Component {
   constructor (props) {
     super(props);
     this.handlers = handlers(this);
+
+    console.log(handlers);
   }
 
   componentWillMount () {
@@ -61,7 +63,19 @@ class EducationFilter extends Component {
       return (
         <section className={styles.section}>
           <div className={styles.wrap}>
-          
+          <h4 className={styles.select_title}>Utbildningsstart</h4>
+          <SelectBox
+            actions={actions}
+            filter={filter}
+            onSelect={handlers.setFilter}
+            search={search}
+            type={{
+              singular: 'utbildningsstart',
+              plural: 'utbildningsstarts',
+              label: 'utbildningsstarts',
+            }}
+            ui={ui}/>
+
           <h4 className={styles.select_title}>Utbildningstyp</h4>
             <SelectBox
               actions={actions}

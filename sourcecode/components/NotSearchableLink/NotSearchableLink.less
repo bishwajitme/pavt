@@ -7,12 +7,17 @@
 }
 
 .wrap {
-    lost-column: 8/12;
-    lost-offset: -2/12;
+  width: 75%;
+  display: block;
+
+  float: right;
+  background: transparent;
+
     box-sizing: border-box;
-    padding: 50px;
+    padding: 20px;
     text-align: center;
-    background-color: @color-gray-bg;
+    border-top:1px solid @color-primary;
+    border-bottom: 1px solid @color-primary;
 }
 
 .heading {
@@ -24,14 +29,14 @@
 
 .text {
     font-size: 16px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .link {
     display: inline-block;
-    color: white;
-    background-color: @color-secondary;
-    padding: 20px;
+    color: @color-primary;
+
+    padding:0px;
     margin: 5px;
     font: @font-button;
     font-size: 16px;
@@ -39,13 +44,21 @@
     transition: background-color, 0.2s;
 
     &:hover {
-        background-color: @color-secondary-light;
+
     }
 
     svg {
-        fill: white;
-        height: 16px;
-        margin-left: 10px;
+        position: relative;
+        top: 13px;
+        left: 10px;
+        height: 22px;
+        width: 22px;
+        fill: #fff;
+        transition: fill 0.2s;
+       background-color: @color-primary;
+       padding: 10px;
+      border-radius: 22px;
+        transition: background-color 0.2s;
     }
 }
 

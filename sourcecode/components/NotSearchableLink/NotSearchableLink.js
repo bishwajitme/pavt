@@ -1,6 +1,9 @@
 import React, { Component, PropTypes } from 'react';
 import { Link } from 'react-router';
 import styles from './NotSearchableLink.less';
+import MetaIconItem from 'components/MetaIconItem/MetaIconItem';
+import HTMLContent from 'components/HTMLContent/HTMLContent';
+import * as Icons from 'utils/svgIcons'; 
 
 class NotSearchableLink extends Component {
 
@@ -15,7 +18,7 @@ class NotSearchableLink extends Component {
             Här finns information om ej sökbara utbildningar.
           </p>
           <Link to={'/ej-sokbara'} className={styles.link}>
-            {'Ej sökbara utbildningar'}
+            Läs mer {Icons.carretRight}
           </Link>
         </div>
       </section>

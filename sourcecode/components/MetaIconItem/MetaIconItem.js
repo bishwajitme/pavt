@@ -1,11 +1,11 @@
 import React, { Component, PropTypes } from 'react';
 import { library } from '@fortawesome/fontawesome-svg-core';
-import {  faClock, faLightbulb, faMapMarkerAlt, faLaptop } from '@fortawesome/free-solid-svg-icons';
+import {  faMapMarkerAlt, faLaptop } from '@fortawesome/free-solid-svg-icons';
+import { faClock, faLightbulb } from '@fortawesome/free-regular-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import styles from './MetaIconItem.less';
 library.add(
-
   faClock,
   faLightbulb,
   faMapMarkerAlt,
@@ -15,11 +15,21 @@ class MetaIconItem extends Component {
 
   render () {
     const { school, icon, value } = this.props;
+    let faIcon = [];
+
+
+    if(icon==='clock' || icon==='lightbulb'){
+        faIcon.push('far');
+    }
+    else{
+        faIcon.push('fas');
+    }
+    faIcon.push(icon);
 
     if (value) {
       return (
         <li className={`${styles.item} ${styles[school]}`} >
-        <span className={styles.pfaicon}>  <FontAwesomeIcon icon={icon} /></span>
+        <span className={styles.pfaicon}>  <FontAwesomeIcon icon={faIcon} /></span>
           <span className={styles.value}>{value}</span>
         </li>
       );
