@@ -1,7 +1,7 @@
 import { fromJS } from 'immutable';
 
 export const groupEducationsBySchool = (educations) => {
-return educations.sortBy(education => education.get('status') )
+return educations.sortBy(education => education.get('status') ).reverse()
     .groupBy(education => education.get('school'));
 };
 

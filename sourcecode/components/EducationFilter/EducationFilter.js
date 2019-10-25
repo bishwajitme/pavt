@@ -9,10 +9,25 @@ import styles from './EducationFilter.less';
 const handlers = (comp) => {
   return {
     setFilter: (e, singular) => {
+      let gaData = {
+        event: 'search:educations',
+      };
+
+      comp.props.filter.getIn(['education', 'temp']).map((val, key) => {
+        const slug = val.get('slug');
+        if (slug) {
+          gaData[`search-${key}`] = slug;
+        }
+      });
+
+      dataLayer.push(gaData);
+
+      comp.props.actions.setEducationListFilter();
+    
 
     },
     applyFilter: () => {
-      const gaData = {
+      let gaData = {
         event: 'search:educations',
       };
 
@@ -38,8 +53,6 @@ class EducationFilter extends Component {
   constructor (props) {
     super(props);
     this.handlers = handlers(this);
-
-    console.log(handlers);
   }
 
   componentWillMount () {
@@ -50,6 +63,10 @@ class EducationFilter extends Component {
     const { actions, filter, search, ctaTitle, ui } = this.props;
     const status = search.get('status');
     const handlers = this.handlers;
+
+    function refreshPage(){
+    window.location.reload();
+  }
 
     if (status === 'error') {
       return false;
@@ -123,6 +140,20 @@ class EducationFilter extends Component {
                          className={styles.link}
                          onClick={handlers.applyFilter}>
                 {ctaTitle}
+              </Link>)
+              }
+            </div>
+
+            <div className={`${styles.apply} ${styles[changeStyle]}`}>
+              {(window.location.pathname === '/utbildningar')
+                ? (<span className={styles.link}
+                         onClick={ refreshPage }>
+              Ta bort filter
+              </span>)
+                : (<Link to='/utbildningar'
+                         className={styles.link}
+                         onClick={ refreshPage }>
+                Ta bort filter
               </Link>)
               }
             </div>

@@ -60,9 +60,9 @@ class ArticleCard extends Component {
         <div className={styles.content}>
           <header className={styles.header}>
             <p className={`${styles.date} ${styles[schoolStyle]}`}>{date}</p>
-            <h1 className={styles.heading}>
+            <h2 className={styles.heading}>
               {link}
-            </h1>
+            </h2>
           </header>
           <p className={styles.excerpt}>{excerpt}</p>
           {arrowLink}

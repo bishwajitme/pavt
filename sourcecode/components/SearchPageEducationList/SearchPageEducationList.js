@@ -40,11 +40,7 @@ class SearchPageEducationList extends Component {
       const filtered = fE.filterEducationsThroughQuery(
         query, filteredNotSearchable);
 
-
-
       const groupedBySchool = fE.groupEducationsBySchool(filtered);
-
-  
       const orderedBySchool = fE.orderEducationGroupsBySchool(groupedBySchool);
       const groupedComponents = orderedBySchool.map((group, name) => {
         const school = (orderedBySchool.size > 1)

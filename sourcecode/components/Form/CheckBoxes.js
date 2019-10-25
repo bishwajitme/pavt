@@ -26,10 +26,14 @@ const handlers = (comp) => {
         slug: e.target.dataset.value,
         title: e.target.dataset.title,
       }));
-      console.log('filter' + filter);
+
 
       comp.handlers.toggleSelect(comp.props.type.singular);
       comp.props.actions.setEducationListTempFilter(filter);
+
+      window.location.href = "/utbildningar";
+
+      console.log("called function");
     },
     toggleSelect: () => {
       comp.props.actions.toggleSelect(comp.props.type.singular);

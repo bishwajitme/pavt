@@ -82,7 +82,7 @@ class SiteFooter extends Component {
             </section>
           </div>
           <p className={styles.link}>
-            <span>{siteName} är en del av AcadeMedia, norra Europas största utbildningsföreta </span>
+            <span>{siteName} är en del av AcadeMedia, norra Europas största utbildningsföretag </span>
             <a href='http://www.academedia.se'>www.academedia.se</a>.
           </p>
           <p className={styles.cookies}>
