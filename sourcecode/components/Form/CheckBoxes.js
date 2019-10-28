@@ -5,6 +5,7 @@ import Spinner from 'components/Spinner/Spinner';
 import * as Icons from 'utils/svgIcons';
 import isMobileBrowser from 'utils/isMobileBrowser';
 import styles from './CheckBoxes.less';
+import getQueryParams from '../../utils/getQueryParams.js';
 
 const handlers = (comp) => {
   return {
@@ -12,28 +13,41 @@ const handlers = (comp) => {
       const target = e.target;
       const dataset = target.options[target.selectedIndex].dataset;
       const oldFilter = comp.props.filter.getIn(['education', 'temp']);
+      const queryParams = Immutable.fromJS(getQueryParams());
+
+
       const filter = oldFilter.set(comp.props.type.singular, Immutable.fromJS({
         slug: dataset.value,
         title: dataset.title,
       }));
 
-      comp.props.actions.setEducationListTempFilter(filter);
+      comp.props.actions.setEducationListTempFilter(queryParams);
 
     },
     onClick: (e) => {
       const oldFilter = comp.props.filter.getIn(['education', 'temp']);
-      const filter = oldFilter.set(comp.props.type.singular, Immutable.fromJS({
+      const queryParams = Immutable.fromJS(getQueryParams());
+
+      const filter = queryParams.set(comp.props.type.singular, Immutable.fromJS({
         slug: e.target.dataset.value,
         title: e.target.dataset.title,
       }));
 
+     var searchQuery = '/utbildningar?';
+     if (filter.size) {
+    filter.map((val, key) => {
+      if(val.get('slug')!=''){
+        searchQuery =  searchQuery + key +'='+val.get('slug')+'&';
+      }
 
+    });
+  }
+
+      window.location.href = searchQuery;
       comp.handlers.toggleSelect(comp.props.type.singular);
       comp.props.actions.setEducationListTempFilter(filter);
 
-      window.location.href = "/utbildningar";
 
-      console.log("called function");
     },
     toggleSelect: () => {
       comp.props.actions.toggleSelect(comp.props.type.singular);
@@ -58,19 +72,21 @@ class CheckBoxes extends Component {
     const response = search.get('response');
     const status = search.get('status');
     const handlers = this.handlers;
+    const newQueryParams = Immutable.fromJS(getQueryParams());
 
     if (status === 'done' && response) {
 
-      const current = filter.getIn(
-        ['education', 'temp', type.singular, 'title']
+      const current = newQueryParams.getIn(
+        [type.singular, 'slug']
       );
+      
       const options = response.get(type.plural);
 
       const getDesktopOptions = () => {
         return options.sortBy(item => item.get('slug')).map(item => {
           const value = item.get('slug');
           const title = item.get('title');
-          const active = (title === current) ? 'active' : '';
+          const active = (value === current) ? 'active' : '';
           return (
             <div key={value}
                  data-value={value}
@@ -106,7 +122,7 @@ class CheckBoxes extends Component {
             val.sortBy(item => item.get('slug')).map(item => {
               const value = item.get('slug');
               const title = item.get('title');
-              const active = (title === current) ? 'active' : '';
+              const active = (value === current) ? 'active' : '';
               groupedOptions.push(
                 <div key={value}
                      data-value={value}

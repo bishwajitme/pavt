@@ -8,16 +8,19 @@ import EducationListNoResult
 import * as fE from 'utils/filterEducations';
 import Spinner from 'components/Spinner/Spinner';
 import styles from './SearchPageEducationList.less';
+import getQueryParams from '../../utils/getQueryParams.js';
 
 class SearchPageEducationList extends Component {
 
   componentDidMount () {
     const query = this.props.filter.getIn(['education', 'active']);
-    this.props.actions.fetchEducationListFromApi(query);
+    let queryParams = Immutable.fromJS(getQueryParams());
+    this.props.actions.fetchEducationListFromApi(queryParams);
   }
 
   componentWillUpdate (nextProps) {
     const query = this.props.filter.getIn(['education', 'active']);
+
     const nextQuery = nextProps.filter.getIn(['education', 'active']);
     if (!Immutable.is(query, nextQuery)) {
       nextProps.actions.fetchEducationListFromApi(nextQuery);

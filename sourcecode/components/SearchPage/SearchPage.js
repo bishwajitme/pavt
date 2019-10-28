@@ -10,13 +10,12 @@ import SearchPageEducationList
 import NotSearchableLink from 'components/NotSearchableLink/NotSearchableLink';
 import styles from './SearchPage.less';
 
+
 class SearchPage extends Component {
 
 
   componentWillMount () {
     const slug = getSlugFromPathname(this.props.location.pathname);
-
-
     this.props.actions.fetchPageFromApi(slug);
   }
 
@@ -27,7 +26,7 @@ class SearchPage extends Component {
 
   render () {
     const slug = getSlugFromPathname(this.props.location.pathname);
-    
+
     const pages = this.props.pages;
     let globalo = this.props.globals;
     let globalResponse = globalo.get('response');

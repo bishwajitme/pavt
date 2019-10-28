@@ -4,6 +4,7 @@ import ImmutablePropTypes from 'react-immutable-proptypes';
 import Immutable from 'immutable';
 import SelectBox from 'components/Form/CheckBoxes';
 import { Link } from 'react-router';
+
 import styles from './EducationFilter.less';
 
 const handlers = (comp) => {
@@ -23,7 +24,7 @@ const handlers = (comp) => {
       dataLayer.push(gaData);
 
       comp.props.actions.setEducationListFilter();
-    
+
 
     },
     applyFilter: () => {
@@ -65,7 +66,7 @@ class EducationFilter extends Component {
     const handlers = this.handlers;
 
     function refreshPage(){
-    window.location.reload();
+    window.location.href = '/utbildningar';
   }
 
     if (status === 'error') {
@@ -130,28 +131,15 @@ class EducationFilter extends Component {
                 }}
                 ui={ui}/>
 
-            <div className={`${styles.apply} ${styles[changeStyle]}`}>
-              {(window.location.pathname === '/utbildningar')
-                ? (<span className={styles.link}
-                         onClick={handlers.applyFilter}>
-                {ctaTitle}
-              </span>)
-                : (<Link to='/utbildningar'
-                         className={styles.link}
-                         onClick={handlers.applyFilter}>
-                {ctaTitle}
-              </Link>)
-              }
-            </div>
 
             <div className={`${styles.apply} ${styles[changeStyle]}`}>
               {(window.location.pathname === '/utbildningar')
-                ? (<span className={styles.link}
+                ? (<span className={styles.tabort}
                          onClick={ refreshPage }>
               Ta bort filter
               </span>)
                 : (<Link to='/utbildningar'
-                         className={styles.link}
+                         className={styles.tabort}
                          onClick={ refreshPage }>
                 Ta bort filter
               </Link>)
