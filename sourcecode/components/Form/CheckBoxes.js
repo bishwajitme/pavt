@@ -41,6 +41,7 @@ const handlers = (comp) => {
       }
 
     });
+  searchQuery = searchQuery.slice(0, -1);
   }
 
       window.location.href = searchQuery;
@@ -79,7 +80,7 @@ class CheckBoxes extends Component {
       const current = newQueryParams.getIn(
         [type.singular, 'slug']
       );
-      
+
       const options = response.get(type.plural);
 
       const getDesktopOptions = () => {
