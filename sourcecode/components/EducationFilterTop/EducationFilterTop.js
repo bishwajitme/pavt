@@ -1,9 +1,7 @@
 import dataLayer from 'utils/dataLayer';
 import React, { Component, PropTypes } from 'react';
 import ImmutablePropTypes from 'react-immutable-proptypes';
-import Immutable from 'immutable';
 import SelectBox from 'components/Form/CheckBoxesTop';
-import { Link } from 'react-router';
 import styles from './EducationFilterTop.less';
 
 const handlers = (comp) => {
@@ -45,7 +43,7 @@ class EducationFilterTop extends Component {
   }
 
   render () {
-    const { actions, filter, search, ctaTitle, ui } = this.props;
+    const { actions, filter, search, ui } = this.props;
     const status = search.get('status');
     const handlers = this.handlers;
 
@@ -53,11 +51,7 @@ class EducationFilterTop extends Component {
       return false;
     } else {
 
-      const tempFilter = filter.getIn(['education', 'temp']);
-      const activeFilter = filter.getIn(['education', 'active']);
-      const changeStyle = (Immutable.is(tempFilter, activeFilter))
-        ? ''
-        : 'hasChange';
+
       return (
         <section className={styles.section}>
           <div className={styles.wrap}>

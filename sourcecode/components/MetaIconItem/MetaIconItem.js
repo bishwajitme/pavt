@@ -14,15 +14,14 @@ library.add(
 class MetaIconItem extends Component {
 
   render () {
-    const { school, icon, value } = this.props;
-    let faIcon = [];
+    const { school, icon, value, valueHover  } = this.props;
+    const faIcon = [];
 
 
-    if(icon==='clock' || icon==='lightbulb'){
-        faIcon.push('far');
-    }
-    else{
-        faIcon.push('fas');
+    if (icon==='clock' || icon==='lightbulb') {
+      faIcon.push('far');
+    } else {
+      faIcon.push('fas');
     }
     faIcon.push(icon);
 
@@ -30,7 +29,7 @@ class MetaIconItem extends Component {
       return (
         <li className={`${styles.item} ${styles[school]}`} >
         <span className={styles.pfaicon}>  <FontAwesomeIcon icon={faIcon} /></span>
-          <span className={styles.value}>{value}</span>
+          <span className={styles.value} title={valueHover}>{value}</span>
         </li>
       );
     }  else {
@@ -43,6 +42,7 @@ MetaIconItem.propTypes = {
   icon: PropTypes.string,
   school: PropTypes.string,
   value: PropTypes.string,
+  valueHover: PropTypes.string,
 };
 
 export default MetaIconItem;

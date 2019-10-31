@@ -6,7 +6,7 @@ function getQueryParams () {
   for (let i = 0; i < hashes.length; i++) {
     hash = hashes[i].split('=');
     if (hash[1]) {
-      vars[hash[0]] = {'slug':hash[1], 'title':hash[1]};
+      vars[hash[0]] = {slug:hash[1], title:hash[1]};
     }
   }
   return vars;

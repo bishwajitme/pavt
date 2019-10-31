@@ -1,7 +1,7 @@
 import { fromJS } from 'immutable';
 
 export const groupEducationsBySchool = (educations) => {
-return educations.sortBy(education => education.get('status') ).reverse()
+  return educations.sortBy(education => education.get('status') ).reverse()
     .groupBy(education => education.get('school'));
 };
 
@@ -50,10 +50,10 @@ export const filterEducationsThroughQuery = (query, educations) => {
           case 'utbildningsstart':
               //Om det är establishment, kolla om typens slug
               // matchar filtrets value...
-              willPassFilter = (education.getIn([key, 'slug'])
+            willPassFilter = (education.getIn([key, 'slug'])
               === slugFromVal)
                 ? willPassFilter : false;
-              break;
+            break;
           case 'location':
             //Om det är location, försök hitta en ort med slug som
             // matchar filtrets value...
@@ -79,10 +79,10 @@ export const filterEducationsThroughQuery = (query, educations) => {
           case 'studietakt':
               //Om det är establishment, kolla om typens slug
               // matchar filtrets value...
-              willPassFilter = (education.getIn([key, 'slug'])
+            willPassFilter = (education.getIn([key, 'slug'])
               === slugFromVal)
                 ? willPassFilter : false;
-              break;
+            break;
 
           default:
             break;

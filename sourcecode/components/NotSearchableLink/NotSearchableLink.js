@@ -1,9 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { Link } from 'react-router';
 import styles from './NotSearchableLink.less';
-import MetaIconItem from 'components/MetaIconItem/MetaIconItem';
-import HTMLContent from 'components/HTMLContent/HTMLContent';
-import * as Icons from 'utils/svgIcons'; 
+import * as Icons from 'utils/svgIcons';
 
 class NotSearchableLink extends Component {
 

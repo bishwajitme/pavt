@@ -13,8 +13,8 @@ import getQueryParams from '../../utils/getQueryParams.js';
 class SearchPageEducationList extends Component {
 
   componentDidMount () {
-    const query = this.props.filter.getIn(['education', 'active']);
-    let queryParams = Immutable.fromJS(getQueryParams());
+
+    const queryParams = Immutable.fromJS(getQueryParams());
     this.props.actions.fetchEducationListFromApi(queryParams);
   }
 

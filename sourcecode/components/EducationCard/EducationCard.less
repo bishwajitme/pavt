@@ -14,10 +14,7 @@
     min-height:400px;
     position: relative;
     transition: background-color 0.2s;
-    &:hover {
-        background-color: rgba(197,0,62,.2);
 
-    }
     .yh{
       position: absolute;
         top: 0;
@@ -39,8 +36,37 @@
         color: #fff;
         font-size: 12px;
     }
+    .certifiering{
+      position: absolute;
+        top: 0;
+        right: 10px;
+        padding: 10px;
+        text-align: center;
+        font-weight: 300;
+        background:@color-certifiering-ah;
+        color: #fff;
+        font-size: 12px;
+    }
   }
+  .ar_kurs {
+      &:hover {
+      background-color: lighten( @color-primary, 60%);
+      color: #fff;
+    }
 
+  }
+  .ar_certi {
+      &:hover {
+      background-color: lighten(@color-certifiering, 50%);
+    }
+
+  }
+  .ar_yh {
+      &:hover {
+      background-color: lighten(#ffff00, 40%);
+    }
+
+  }
 
 //.notSearchable {
 //    opacity: 0.4;

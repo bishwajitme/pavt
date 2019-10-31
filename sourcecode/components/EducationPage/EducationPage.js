@@ -81,6 +81,7 @@ class EducationPage extends Component {
               }
             </div>
           </section>
+          <section className={styles.wrap}>
           {tabList
             ? <TabList id={id}
                        actions={this.props.actions}
@@ -99,6 +100,7 @@ class EducationPage extends Component {
                   globals={this.props.globals}
                   signup={this.props.signup}
                   ui={this.props.ui}/>
+          </section>
         </div>
       );
     } else if (status === 'fetching') {

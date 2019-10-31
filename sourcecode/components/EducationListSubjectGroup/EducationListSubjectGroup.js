@@ -6,10 +6,8 @@ import styles from './EducationListSubjectGroup.less';
 class EducationListSubjectGroup extends Component {
 
   render () {
-    const { heading, group } = this.props;
+    const { group } = this.props;
 
-    const size = group.size;
-    const unit = (size > 1) ? 'utbildningar' : 'utbildning';
 
     const educations = group.map(education => {
       const key = education.get('slug');

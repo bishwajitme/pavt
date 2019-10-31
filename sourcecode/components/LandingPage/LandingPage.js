@@ -43,8 +43,8 @@ class LandingPage extends Component {
       const heroBackgroundImage = response
         .getIn(['pageHero', 'backgroundImage']);
       const preamble = response.get('preamble');
-      const antal_nyheter = siteInfo.get('antal_nyheter');
-      const articleListQuery = Immutable.fromJS({size: antal_nyheter});
+      const antalNyheter = siteInfo.get('antal_nyheter');
+      const articleListQuery = Immutable.fromJS({size: antalNyheter});
       const calendariumQuery = Immutable.fromJS({type: 'event'});
       const infoBlocks = response.get('infoBlocks');
       const articleRow = response.get('articleRow');

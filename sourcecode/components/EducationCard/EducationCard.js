@@ -3,7 +3,6 @@ import ImmutablePropTypes from 'react-immutable-proptypes';
 import { Link } from 'react-router';
 import isLinkToCurrentSite from 'utils/isLinkToCurrentSite';
 import MetaIconItem from 'components/MetaIconItem/MetaIconItem';
-import HTMLContent from 'components/HTMLContent/HTMLContent';
 import * as Icons from 'utils/svgIcons';
 import getPathFromFullUrl from 'utils/getPathFromFullUrl';
 import styles from './EducationCard.less';
@@ -13,20 +12,23 @@ class EducationCard extends Component {
   render () {
     const content = this.props.content;
     const title = content.get('title');
-    const excerpt = content.get('excerpt');
     const linkUrl = content.get('linkUrl');
     const status = content.get('status');
     const deadline = content.get('deadline');
     const startDate = content.get('startDate');
     const scope = content.get('scope');
-    const points = content.get('points');
-    const vacancies = content.get('vacancies');
     const school = content.get('school').charAt(0);
     const location = content.get('location');
     let locations = content.get('locationText');
     let establishment = content.get('establishment').get('name');
+    const utbildningsstart = content.get('utbildningsstart').get('name');
 
-
+    let locationText ='';
+    if (location.size > 1) {
+      locationText = location.size + ' studieorter';
+    } else {
+      locationText = location.size + ' studieort';
+    }
 
     if (!locations) {
       locations = location.reduce((memo, locationItem) => {
@@ -35,10 +37,17 @@ class EducationCard extends Component {
       }, '');
     }
 
-    let extabClassName = 'kurs';
-   if(establishment === 'Yrkeshögskoleutbildning'){
-     establishment = 'Yh';
-    extabClassName = 'yh'
+    let extabClassName = 'certifiering';
+    let exClassName = 'ar_certi';
+    if (establishment === 'Yrkeshögskoleutbildning') {
+      establishment = 'Yh';
+      extabClassName = 'yh';
+      exClassName = 'ar_yh';
+    }
+    if (establishment === 'Kurs') {
+      establishment = 'Kurs';
+      extabClassName = 'kurs';
+      exClassName = 'ar_kurs';
     }
 
 
@@ -69,7 +78,7 @@ class EducationCard extends Component {
         statusText = 'Öppen för ansökan';
         break;
       case 'closed':
-        statusText = 'Stängd för ansökan';
+        statusText = startDate;
         break;
       case 'notSearchable':
         statusText = 'Ej sökbar -Pågående utbildning';
@@ -78,7 +87,7 @@ class EducationCard extends Component {
 
     return (
       <article
-        className={`${styles.article} ${styles[school]} ${styles[status]}`}>
+        className={`${styles.article} ${styles[school]} ${styles[exClassName]} ${styles[status]}`}>
         <div className={`${styles[extabClassName]}`}>{establishment}</div>
         <div className={styles.content}>
           <h2 className={styles.heading}>
@@ -88,14 +97,15 @@ class EducationCard extends Component {
         <div className={styles.meta}>
           <ul className={styles.list}>
             <MetaIconItem icon='map-marker-alt'
-                      value={locations}
+                      value={locationText}
+                      valueHover={locations}
                       school={school}/>
 
             <MetaIconItem icon='clock'
                       value={deadline}
                       school={school}/>
             <MetaIconItem icon='clock'
-                      value={startDate}
+                      value={utbildningsstart}
                       school={school}/>
             <MetaIconItem icon='lightbulb'
                       value={scope}

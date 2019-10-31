@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import ImmutablePropTypes from 'react-immutable-proptypes';
-import EducationListSubjectGroup
-  from 'components/EducationListSubjectGroup/EducationListSubjectGroup';
 import isLinkToCurrentSite from 'utils/isLinkToCurrentSite';
 import styles from './EducationListSchoolGroup.less';
 import EducationCard from 'components/EducationCard/EducationCard';
@@ -12,9 +10,6 @@ class EducationListSchoolGroup extends Component {
   render () {
     const { group, school } = this.props;
 
-    const groupedBySubject = group
-      .groupBy(education => education.get('subject'));
-
     const educations = group.map(education => {
       const key = education.get('slug');
       return (
@@ -22,11 +17,7 @@ class EducationListSchoolGroup extends Component {
       )
     }).toArray();
 
-    const groupedComponents = groupedBySubject.map((group, name) => {
-      return (<EducationListSubjectGroup key={name.get('slug')}
-                                         group={group}
-                                         heading={name}/>)
-    }).toArray();
+
 
     let link = '';
     if (school.size) {

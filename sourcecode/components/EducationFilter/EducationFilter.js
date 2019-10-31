@@ -10,7 +10,7 @@ import styles from './EducationFilter.less';
 const handlers = (comp) => {
   return {
     setFilter: (e, singular) => {
-      let gaData = {
+      const gaData = {
         event: 'search:educations',
       };
 
@@ -28,7 +28,7 @@ const handlers = (comp) => {
 
     },
     applyFilter: () => {
-      let gaData = {
+      const gaData = {
         event: 'search:educations',
       };
 
@@ -61,13 +61,13 @@ class EducationFilter extends Component {
   }
 
   render () {
-    const { actions, filter, search, ctaTitle, ui } = this.props;
+    const { actions, filter, search, ui } = this.props;
     const status = search.get('status');
     const handlers = this.handlers;
 
-    function refreshPage(){
-    window.location.href = '/utbildningar';
-  }
+    function refreshPage() {
+      window.location.href = '/utbildningar';
+    }
 
     if (status === 'error') {
       return false;

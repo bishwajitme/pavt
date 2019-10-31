@@ -10,20 +10,11 @@ import getQueryParams from '../../utils/getQueryParams.js';
 const handlers = (comp) => {
   return {
     onMobileClick: (e) => {
-      const target = e.target;
-      const dataset = target.options[target.selectedIndex].dataset;
-      const oldFilter = comp.props.filter.getIn(['education', 'temp']);
       const queryParams = Immutable.fromJS(getQueryParams());
-      const filter = oldFilter.set(comp.props.type.singular, Immutable.fromJS({
-        slug: dataset.value,
-        title: dataset.title,
-      }));
-
       comp.props.actions.setEducationListTempFilter(queryParams);
 
     },
     onClick: (e) => {
-      const oldFilter = comp.props.filter.getIn(['education', 'temp']);
       const queryParams = Immutable.fromJS(getQueryParams());
       const filter = queryParams.set(comp.props.type.singular, Immutable.fromJS({
         slug: e.target.dataset.value,
@@ -31,16 +22,16 @@ const handlers = (comp) => {
       }));
 
 
-      var searchQuery = '/utbildningar?';
+      let searchQuery = '/utbildningar?';
       if (filter.size) {
-     filter.map((val, key) => {
-       if(val.get('slug')!=''){
-         searchQuery =  searchQuery + key +'='+val.get('slug')+'&';
-       }
+        filter.map((val, key) => {
+          if (val.get('slug')!='') {
+            searchQuery =  searchQuery + key +'='+val.get('slug')+'&';
+          }
 
-     });
-     searchQuery = searchQuery.slice(0, -1);
-     }
+        });
+        searchQuery = searchQuery.slice(0, -1);
+      }
 
       window.location.href = searchQuery;
 
@@ -66,7 +57,7 @@ class CheckBoxes extends Component {
   }
 
   render () {
-    const { filter, search, type, ui } = this.props;
+    const { search, type, ui } = this.props;
     const response = search.get('response');
     const status = search.get('status');
     const handlers = this.handlers;
@@ -78,6 +69,8 @@ class CheckBoxes extends Component {
         [type.singular, 'slug']
       );
       const options = response.get(type.plural);
+
+
 
       const getDesktopOptions = () => {
         return options.sortBy(item => item.get('slug')).map(item => {
@@ -111,8 +104,10 @@ class CheckBoxes extends Component {
         });
       };
 
+
       const getDesktopSubjectOptions = () => {
         const groupedOptions = [];
+
         options.sortBy(item => item.get('school'))
           .groupBy(item => item.get('school'))
           .map((val, key) => {
@@ -131,6 +126,8 @@ class CheckBoxes extends Component {
               )
             });
           });
+
+
         return groupedOptions;
       };
 
@@ -199,7 +196,7 @@ class CheckBoxes extends Component {
         ? ''
         : 'hasChange';
 
-      if (options.size > 2) {
+      if (options.size > 1) {
         return (
           <div className={`${styles.wrap} ${styles[changeStyle]}`}>
             {(isMobileBrowser())
