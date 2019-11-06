@@ -199,17 +199,7 @@ class CheckBoxes extends Component {
       if (options.size > 1) {
         return (
           <div className={`${styles.wrap} ${styles[changeStyle]}`}>
-            {(isMobileBrowser())
-              ? (<div className={styles.mobileSelectWrap}>
-              <select name={type.singular}
-                      id={type.singular}
-                      onChange={handlers.onMobileClick}
-                      className={styles.mobileSelect}>
-                {items.mobile[type.plural]()}
-              </select>
-              <span className={styles.mobileCarret}>{Icons.carretDown}</span>
-            </div>)
-              : (<div tabIndex='0'
+        <div tabIndex='0'
                       ref={type.singular}
                       className={styles.select}>
               <div className={styles.toggle}
@@ -219,7 +209,7 @@ class CheckBoxes extends Component {
               <div className={`${styles.options} ${styles[openStyle]}`}>
                 {items.desktop[type.plural]()}
               </div>
-            </div>)}
+            </div>
           </div>
         );
       } else {

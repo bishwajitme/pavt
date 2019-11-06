@@ -66,11 +66,19 @@ class SearchPage extends Component {
                                  ui={this.props.ui}/>
         </div>
         <div className={styles.filter}>
+
+        <input className={styles.toggle} type="checkbox" />
+        <label className={styles.togglelevel} for="toggle">Avancerad filtrering</label>
+        <div className={styles.expand}>
+          <section>
           <EducationFilter actions={this.props.actions}
                            ctaTitle='Filtrera'
                            filter={this.props.filter}
                            search={this.props.search}
                            ui={this.props.ui}/>
+
+            </section>
+          </div>
          <div className={styles.sidecontent}>
           <h3>Vill du inleda en ny karriär?</h3>
                 <p> Gå vidare med din ansökan!</p>
@@ -80,13 +88,13 @@ class SearchPage extends Component {
                </Link>
 
             <h3>   Kom i kontakt med oss</h3>
-<p>Behöver mer info innan du bestämmer dig? Kontakta oss på <a href={`tel:${phone}`}> {phone}</a>
+<p>Behöver mer info innan du bestämmer dig? Kontakta oss på <a href={`tel:${phone}`}> {phone} </a>
 eller <a href={`mailto:${email}`}>{email}</a>.</p>
 <h3>Ska vi skicka dig mer info?</h3>
-<p>Gör en <a href='/om-oss/intresseanmalan/'><strong>intresseanmälan</strong></a>
- så håller vi dig uppdaterad om vad som är på gång!</p>
-</div>
+<p>Gör en <a href='/om-oss/intresseanmalan/'><strong>intresseanmälan</strong> </a>
+  så håller vi dig uppdaterad om vad som är på gång!</p>
         </div>
+      </div>
         <SearchPageEducationList actions={this.props.actions}
                                  educationList={this.props.educationList}
                                  filter={this.props.filter}

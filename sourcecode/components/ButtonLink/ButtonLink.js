@@ -31,6 +31,9 @@ class ButtonLink extends Component {
         break;
       case 'anchorLink':
         return (<a className={styles.link} href={linkUrl}>{title}</a>);
+      case 'emailLink':
+        const emailUrl = 'mailto:'+linkUrl;
+        return (<a className={styles.link} href={emailUrl}>{title}</a>);
       default:
         return null;
     }

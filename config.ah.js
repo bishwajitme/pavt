@@ -28,7 +28,7 @@ module.exports = {
   },
   prod: {
     sitename: 'Affärshögskolan',
-    hostname: 'http://ah.demositestore.com',
+    hostname: 'https://affarshogskolan.se',
     apiEndpoint: '/wp-json/ph',
     assetsPath: '/wp-content/themes/plushogskolan-web/assets/',
     cacheTime: 0,

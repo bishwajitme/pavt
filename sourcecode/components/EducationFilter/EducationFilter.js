@@ -81,9 +81,10 @@ class EducationFilter extends Component {
       return (
         <section className={styles.section}>
           <div className={styles.wrap}>
-          <h4 className={styles.select_title}>Utbildningsstart</h4>
+
           <SelectBox
             actions={actions}
+            selecttitle='Utbildningsstart'
             filter={filter}
             onSelect={handlers.setFilter}
             search={search}
@@ -94,9 +95,10 @@ class EducationFilter extends Component {
             }}
             ui={ui}/>
 
-          <h4 className={styles.select_title}>Utbildningstyp</h4>
+
             <SelectBox
               actions={actions}
+              selecttitle='Utbildningstyp'
               filter={filter}
               onSelect={handlers.setFilter}
               search={search}
@@ -106,9 +108,10 @@ class EducationFilter extends Component {
                 label: 'utbildningstyper',
               }}
               ui={ui}/>
-              <h4 className={styles.select_title}>studieort</h4>
+
             <SelectBox
               actions={actions}
+              selecttitle='studieort'
               filter={filter}
               onSelect={handlers.setFilter}
               search={search}
@@ -118,9 +121,10 @@ class EducationFilter extends Component {
                 label: 'studieorter',
               }}
               ui={ui}/>
-              <h4 className={styles.select_title}>Studietakt</h4>
+
               <SelectBox
                 actions={actions}
+                selecttitle='Studietakt'
                 filter={filter}
                 onSelect={handlers.setFilter}
                 search={search}
@@ -141,7 +145,7 @@ class EducationFilter extends Component {
                 : (<Link to='/utbildningar'
                          className={styles.tabort}
                          onClick={ refreshPage }>
-                Ta bort filter
+                Rensa filtrering
               </Link>)
               }
             </div>

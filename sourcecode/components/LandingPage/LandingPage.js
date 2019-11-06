@@ -116,6 +116,8 @@ LandingPage.propTypes = {
   articleList: ImmutablePropTypes.map,
   filter: ImmutablePropTypes.map,
   globals: ImmutablePropTypes.map,
+  location: PropTypes.object,
+  'location.pathname': PropTypes.string,
   locationList: PropTypes.object,
   pages: ImmutablePropTypes.map,
   search: ImmutablePropTypes.map,

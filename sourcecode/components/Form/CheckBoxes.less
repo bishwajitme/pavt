@@ -5,6 +5,12 @@
     max-width: 400px;
     padding: 0 10px 10px 0;
     box-sizing: border-box;
+    
+    .select_title{
+      font-weight: bold;
+      text-transform: capitalize;
+      margin-bottom: 10px;
+    }
 }
 
 .select {
@@ -129,6 +135,13 @@
 
 @media @tabletAndDown {
     .wrap {
-        max-width: 100%;
+        width: 50%;
+        float: left;
     }
+}
+@media @mobile {
+  .wrap {
+      max-width: 100%;
+      float: none;
+  }
 }

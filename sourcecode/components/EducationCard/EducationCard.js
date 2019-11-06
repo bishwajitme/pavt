@@ -23,18 +23,16 @@ class EducationCard extends Component {
     let establishment = content.get('establishment').get('name');
     const utbildningsstart = content.get('utbildningsstart').get('name');
 
-    let locationText ='';
-    if (location.size > 1) {
-      locationText = location.size + ' studieorter';
-    } else {
-      locationText = location.size + ' studieort';
-    }
 
     if (!locations) {
       locations = location.reduce((memo, locationItem) => {
         const separator = (memo.length) ? ', ' : '';
         return `${memo}${separator}${locationItem.get('name')}`;
       }, '');
+    }
+    let locationText = locations;
+    if (location.size > 1) {
+      locationText = location.size + ' orter';
     }
 
     let extabClassName = 'certifiering';
@@ -70,7 +68,7 @@ class EducationCard extends Component {
          Läs mer {Icons.carretRight}
       </a>;
 
-
+   
 
     let statusText = '';
     switch (status) {

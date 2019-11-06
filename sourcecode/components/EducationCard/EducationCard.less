@@ -22,7 +22,7 @@
         padding: 10px;
         text-align: center;
         font-weight: bold;
-        background: yellow;
+        background: #ffed00;
 
     }
     .kurs{
@@ -48,25 +48,7 @@
         font-size: 12px;
     }
   }
-  .ar_kurs {
-      &:hover {
-      background-color: lighten( @color-primary, 60%);
-      color: #fff;
-    }
 
-  }
-  .ar_certi {
-      &:hover {
-      background-color: lighten(@color-certifiering, 50%);
-    }
-
-  }
-  .ar_yh {
-      &:hover {
-      background-color: lighten(#ffff00, 40%);
-    }
-
-  }
 
 //.notSearchable {
 //    opacity: 0.4;
@@ -163,6 +145,25 @@
             color: @color-primary-light-th;
         }
     }
+    &.ar_kurs {
+        &:hover {
+        background-color: rgba(237, 139, 0,.17);
+        color: #fff;
+      }
+
+    }
+    &.ar_certi {
+        &:hover {
+        background-color: rgba(0, 133, 120,.18);
+      }
+
+    }
+    &.ar_yh {
+        &:hover {
+        background-color: rgba(0, 89, 79,.22);
+      }
+
+    }
 }
 
 .V{
@@ -171,6 +172,27 @@
         &:hover {
             color: @color-primary-light-vh;
         }
+    }
+    &.ar_kurs {
+        &:hover {
+        background-color: rgba(115, 46, 74,.15);
+        color: #a58938;
+      }
+
+    }
+    &.ar_certi {
+        &:hover {
+        background-color: rgba(137, 118, 48,.15);
+        color: #a58938;
+      }
+
+    }
+    &.ar_yh {
+        &:hover {
+        background-color: rgba(193, 160, 30,.22);
+        color: #a58938;
+      }
+
     }
 
 }
@@ -181,6 +203,25 @@
         &:hover {
             color: @color-primary-light-ah;
         }
+    }
+    &.ar_kurs {
+        &:hover {
+        background-color: rgba(197, 0, 62,.15);
+        color: #fff;
+      }
+
+    }
+    &.ar_certi {
+        &:hover {
+        background-color: rgba(0, 72, 81,.18);
+      }
+
+    }
+    &.ar_yh {
+        &:hover {
+        background-color: rgba(0, 103, 127,.25);
+      }
+
     }
 
 }
@@ -237,6 +278,11 @@
             fill: @color-primary-ah;
         }
     }
+}
+@media only screen and (max-width: 1100px) {
+  .article {
+    width: 49%;
+  }
 }
 @media @tabletAndDown {
 
