@@ -66,9 +66,6 @@ class EducationPage extends Component {
           <EducationPageMeta content={meta}/>
           <section className={styles.content}>
             <div className={styles.wrap}>
-              <header className={styles.header}>
-                <h1>Om utbildningen</h1>
-              </header>
               {wysiwygContent
                 ? <WYSIWYGContent content={wysiwygContent}/>
                 : false
@@ -81,7 +78,7 @@ class EducationPage extends Component {
               }
             </div>
           </section>
-          <section className={styles.wrap}>
+          <section>
           {tabList
             ? <TabList id={id}
                        actions={this.props.actions}
@@ -89,18 +86,22 @@ class EducationPage extends Component {
                        ui={this.props.ui}/>
             : false
           }
+          </section>
+          <section className={styles.wrap}>
           {articleCards
             ? <ArticleCards context='thirds-fullrow'
                             heading={articleRow.get('heading')}
                             articles={articleCards}/>
             : false
           }
+          </section>
+
           <Signup actions={this.props.actions}
                   formEducations={this.props.formEducations}
                   globals={this.props.globals}
                   signup={this.props.signup}
                   ui={this.props.ui}/>
-          </section>
+
         </div>
       );
     } else if (status === 'fetching') {

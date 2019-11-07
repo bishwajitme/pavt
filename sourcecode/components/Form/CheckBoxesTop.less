@@ -61,21 +61,19 @@
     .item {
         cursor: pointer;
         margin-right: 15px;
-        margin-bottom: 10px;
+        margin-bottom: 20px;
         text-transform: uppercase;
         color: #fff;
-        -webkit-box-shadow: @color-primary-light 0px 0px 5px inset;
-        -moz-box-shadow: @color-primary-light 0px 0px 5px inset;
-        box-shadow: @color-primary-light 0px 0px 5px inset;
-        -webkit-border-radius: 8px;
-        -moz-border-radius: 8px;
-        border-radius: 5px;
+        -webkit-box-shadow: @color-primary-light 0px 0px 20px inset;
+        -moz-box-shadow: @color-primary-light 0px 0px 20px inset;
+        box-shadow: @color-primary-light 0px 0px 20px inset;
         padding: 15px 25px;
         text-decoration:none;
         display:inline-block;
         font-weight: bold;
         background-color: @color-primary;
         background-image:@color-primary-gradient;
+        min-width: 150px;
 
         &:hover {
           background-color: @color-primary;
@@ -138,4 +136,13 @@
     .wrap {
         max-width: 100%;
     }
+    .select {
+    .item{
+      width: 100%;
+      padding: 15px 0;
+    }
+    .options {
+      margin-bottom: 0;
+    }
+  }
 }

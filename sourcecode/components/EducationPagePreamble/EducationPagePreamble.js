@@ -11,7 +11,7 @@ class EducationPagePreamble extends Component {
     const title = content.get('title');
     const text = content.get('text');
     let links = content.get('links');
-  
+
     links = links.unshift(Immutable.fromJS({
       title: 'Intresseanmälan',
       type: 'anchorLink',
@@ -22,7 +22,7 @@ class EducationPagePreamble extends Component {
       <section className={styles.section}>
         <div className={styles.well}>
           {title
-            ? <h1 className={styles.heading}>{title}</h1>
+            ? <h2 className={styles.heading}>{title}</h2>
             : null
           }
           {text

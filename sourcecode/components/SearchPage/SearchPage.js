@@ -67,8 +67,8 @@ class SearchPage extends Component {
         </div>
         <div className={styles.filter}>
 
-        <input className={styles.toggle} type="checkbox" />
-        <label className={styles.togglelevel} for="toggle">Avancerad filtrering</label>
+        <input className={styles.toggle} type='checkbox' />
+        <label className={styles.togglelevel}>Avancerad filtrering</label>
         <div className={styles.expand}>
           <section>
           <EducationFilter actions={this.props.actions}
@@ -84,7 +84,7 @@ class SearchPage extends Component {
                 <p> Gå vidare med din ansökan!</p>
                  <Link to='/om-oss/intresseanmalan/'
                           className={styles.link}>
-                 ANSÖK HÄR
+                 Ansök här
                </Link>
 
             <h3>   Kom i kontakt med oss</h3>

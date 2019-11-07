@@ -30,10 +30,6 @@ class SiteFooter extends Component {
         <div className={styles.wrap}>
           <div className={styles.logo}>
             <SiteFooterId id={id}/>
-            <p className={styles.reftext}>
-              <span>Som en del av Plushögskolan AB är vi auktoriserade enligt </span>
-              <a href='https://www.utbildningsforetagen.se/' target='_blank'>Almega Utbildningsföretagen</a>.
-            </p>
           </div>
           <div className={styles.well}>
             <section className={styles.section}>
@@ -84,6 +80,10 @@ class SiteFooter extends Component {
           <p className={styles.link}>
             <span>{siteName} är en del av AcadeMedia, norra Europas största utbildningsföretag </span>
             <a href='http://www.academedia.se'>www.academedia.se</a>.
+          </p>
+          <p className={styles.reftext}>
+            <span>Som en del av Plushögskolan AB är vi auktoriserade enligt </span>
+            <a href='https://www.utbildningsforetagen.se/' target='_blank'>Almega Utbildningsföretagen</a>.
           </p>
           <p className={styles.cookies}>
             <span>Vi använder cookies för att förbättra din upplevelse

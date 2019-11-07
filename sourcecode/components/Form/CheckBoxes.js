@@ -243,8 +243,8 @@ CheckBoxes.propTypes = {
   filter: ImmutablePropTypes.map,
   search: ImmutablePropTypes.map,
   status: PropTypes.string,
-  type: PropTypes.object,
   selecttitle:PropTypes.string,
+  type: PropTypes.object,
   ui: ImmutablePropTypes.map,
 
 };

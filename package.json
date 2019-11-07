@@ -9,7 +9,7 @@
     "prod-th": "theme=th webpack --config production.js --progress --colors -p",
     "prod-vh": "theme=vh webpack --config production.js --progress --colors -p",
     "prod-ah": "theme=ah webpack --config production.js --progress --colors -p",
-    "dev": "theme=ah node development.js",
+    "dev": "theme=vh node development.js",
     "test": "eslint sourcecode",
     "clean": "rm -rf node_modules && npm install"
   },

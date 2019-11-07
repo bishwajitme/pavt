@@ -14,7 +14,6 @@ class EducationCard extends Component {
     const title = content.get('title');
     const linkUrl = content.get('linkUrl');
     const status = content.get('status');
-    const deadline = content.get('deadline');
     const startDate = content.get('startDate');
     const scope = content.get('scope');
     const school = content.get('school').charAt(0);
@@ -47,6 +46,9 @@ class EducationCard extends Component {
       extabClassName = 'kurs';
       exClassName = 'ar_kurs';
     }
+    if (establishment === 'Certifieringsutbildning') {
+      establishment = 'Cert.utbilding';
+    }
 
 
 
@@ -59,7 +61,7 @@ class EducationCard extends Component {
       <Link to={getPathFromFullUrl(linkUrl)}
             className={styles.arrowLink}
             title={title}>
-        {Icons.carretRight}
+        Läs mer {Icons.carretRight}
       </Link>
     )
       : <a href={linkUrl}
@@ -68,7 +70,7 @@ class EducationCard extends Component {
          Läs mer {Icons.carretRight}
       </a>;
 
-   
+
 
     let statusText = '';
     switch (status) {
@@ -99,9 +101,6 @@ class EducationCard extends Component {
                       valueHover={locations}
                       school={school}/>
 
-            <MetaIconItem icon='clock'
-                      value={deadline}
-                      school={school}/>
             <MetaIconItem icon='clock'
                       value={utbildningsstart}
                       school={school}/>
