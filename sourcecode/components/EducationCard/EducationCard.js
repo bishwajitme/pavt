@@ -47,7 +47,7 @@ class EducationCard extends Component {
       exClassName = 'ar_kurs';
     }
     if (establishment === 'Certifieringsutbildning') {
-      establishment = 'Cert.utbilding';
+      establishment = 'Cert.utbildning';
     }
 
 
